@@ -1,0 +1,224 @@
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+sort-arrow {
+  display: inline-block;
+  margin-left: 5px; /* Adds space before the arrow */
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column; /* Stack the image and message vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: Background overlay */
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.error-image {
+  max-width: 300px; /* Adjust size as needed */
+  margin-bottom: 1rem; /* Add space below the image */
+  animation: fadeIn 1.5s ease-in-out;
+}
+/* Modal Container */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure the modal is on top */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display:flex;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the Modal when active */
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Close Button */
+.modal .close-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.modal .update-btn{
+  background-color: #26e315;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Optional Styling for the rest of the app */
+.error-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-image {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* Main content styles */
+/* Main Content */
+.container {
+  margin-left: 90px; /* If you have a sidebar */
+  margin-top: 50px;  /* Adjusted for fixed header + navbar */
+  padding: 20px;
+}
+
+/* .main-content {
+  margin-top: 80px; 
+  margin-left: 130px; 
+  padding: 20px;
+} */
+
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination-button,
+.pagination-page {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #00ff66;
+  background-color: #fff;
+  color: #00ff66;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.pagination-button:disabled {
+  background-color: #f1f1f1;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-page.active {
+  background-color: #00ff66;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pagination-button:hover:not(:disabled),
+.pagination-page:hover {
+  background-color: #00ff66;
+  color: #fff;
+}
+
+.form-group {
+  display: flex;
+  align-items: center; 
+  /* Vertically center the input and label */
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.form-group input {
+  flex: 1; /* Make input take up the remaining space */
+  padding: 5px;
+}
+
+.button {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  margin-right: 0; 
+
+}
+
+
+.readonly-field:focus{
+  border-color: red;
+  box-shadow: 0 0 5px red; /* Optional: Red border for better visibility */
+}
+
+.toggle-button{
+  width: auto;
+}
+
+/* for footer adjustment */
+
+/* .app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

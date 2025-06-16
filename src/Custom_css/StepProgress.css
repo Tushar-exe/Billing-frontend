@@ -1,0 +1,50 @@
+.step-progress {
+  margin-top: 30px;
+  position: relative;
+}
+
+.step-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+
+.step-circle.active {
+  background-color: #0d6efd; /* Bootstrap primary */
+}
+
+.step-circle.completed {
+  background-color: #198754; /* Bootstrap success */
+}
+
+.step-label {
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.step-line {
+  height: 2px;
+  background-color: #ccc;
+  flex: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 0;
+}
+
+.step-line.completed {
+  background-color: #198754;
+}

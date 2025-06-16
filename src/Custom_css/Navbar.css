@@ -1,0 +1,12 @@
+.navbar-fixed {
+  position: fixed;
+  top: 70px; /* same as header height */
+  left: 0;
+  width: 100%;
+  z-index: 1040;
+  height: 50px;
+}
+
+.custom-navbar {
+  background-color: #0b559e;/* light bluish-gray */
+}

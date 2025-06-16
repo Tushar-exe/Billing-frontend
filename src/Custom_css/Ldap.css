@@ -1,0 +1,64 @@
+/* Ldap.css */
+.ldap-container {
+    display: flex;  /* Enable flexbox layout */
+    justify-content: space-between;  /* Distribute the form and image */
+    align-items: center;  /* Align the items vertically */
+    padding: 20px;
+    margin-left: 400px;
+
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeLeft 1s ease-out forwards;
+  }
+  
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeRight 1s ease-out forwards;
+  }
+  
+  @keyframes fadeLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  /* This will prevent horizontal scrolling */
+body, .container-fluid {
+    overflow-x: hidden;
+  }
+
+  .custom-content {
+    max-height: 90vh;     /* Limits modal height to 90% of viewport height */
+    overflow-y: auto;     /* Adds scroll if content exceeds height */
+    width: 100%;          /* Ensures full width of modal dialog */
+  }
+  
+  .custom-modal {
+    max-width: 90vw;      /* Makes modal wider (90% of viewport width) */
+    margin-top: 50px;     /* Adds space from the top of the screen */
+  }
+  
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

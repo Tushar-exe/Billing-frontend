@@ -1,0 +1,63 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+
+import Homecomponent from './Components/Homecomponent';
+import Report from './Components/Report'
+import User from './Components/User';
+import Qos from './Components/Qos';
+import Account from './Components/Account';
+import Ldap from './Components/Ldap';
+import UserForm from './Components/UserForm';
+import AddNewQos from './Components/AddNewQos';
+import Sidebar from './Components/Sidebar';
+import Association from './Components/Association';
+import AccountWithQos from './Components/AccountWithQos';
+import LdapUserUpdater from './Components/LdapUserUpdater';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Slurmoptions from './Components/Slurmoptions';
+import Ldapoptions from './Components/Ldapoptions';
+import QuickUserSetup from './Components/QuickUserSetup';
+
+
+function App() {
+  return (
+    <>
+    <BrowserRouter>
+        
+        <div className="app-wrapper d-flex flex-column min-vh-100">
+          <Header/>
+          <Navbar/>
+          <div className="d-flex flex-grow-1">
+
+          <div className="container flex-grow-1">
+            <Sidebar/>
+          <Routes>
+          {/* Define your routes here */}
+          <Route path="/" element={<Homecomponent></Homecomponent>} />
+          <Route path="/associations" element={<Association></Association>} />
+          <Route path="/reports" element={<Report></Report>} />
+          <Route path="/users_list" element={<User></User>} />
+          <Route path="/user_form" element={<UserForm></UserForm>}/>
+          <Route path="/qos" element={<Qos></Qos>}/>
+          <Route path="/accounts" element={<Account></Account>}/>
+          <Route path="/ldap" element={<Ldap></Ldap>}/>
+          <Route path='/ldap/options'element={<Ldapoptions></Ldapoptions>}/>
+          <Route path="/qos/add" element={<AddNewQos></AddNewQos>}/>
+          <Route path="/accounts/add" element={<AccountWithQos></AccountWithQos>}/>
+          <Route path="/ldap_update" element={<LdapUserUpdater></LdapUserUpdater>}/>
+          <Route path="/slurm/options" element={<Slurmoptions></Slurmoptions>}/>
+          <Route path="/quick-setup" element={<QuickUserSetup></QuickUserSetup>}/>
+
+          </Routes>
+          </div>
+          </div>
+
+          <Footer/>
+        </div>
+    </BrowserRouter>
+    </>
+  );
+}
+
+export default App;
