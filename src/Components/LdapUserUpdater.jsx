@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 
   // Fetch list of LDAP users on mount
   useEffect(() => {
-    const url =`${base_url}/slurm/ldap_list/`
+    const url =`${base_url}/ldap`
     fetch(url,{
         method:'GET',
         headers:{
@@ -32,6 +32,7 @@ import React, { useEffect, useState } from "react";
     try {
       const res = await fetch(`/api/ldap-users/${uid}`); // Replace with actual backend endpoint
       const data = await res.json();
+      console.log(data);
       setUserDetails(data);
       setEditForm(data); // Clone for editing
     } catch (error) {
@@ -68,6 +69,7 @@ import React, { useEffect, useState } from "react";
       {/* Dropdown for user selection */}
       <div>
         <br />
+
         <h2 className="text-center mb-4">LDAP User Details</h2>
         <label className="block mb-1 font-medium">Select LDAP User:</label>
         <select

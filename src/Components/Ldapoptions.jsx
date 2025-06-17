@@ -50,7 +50,7 @@ const Ldapoptions=()=>{
                 bulk of the card's content.
               </Card.Text>
                <div className='button'>
-              <NavLink to='/ldap-update'>
+              <NavLink to='/ldap_update'>
               <Button  variant="primary">View Ldap Users</Button>
               </NavLink>
               </div>
