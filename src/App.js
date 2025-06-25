@@ -18,6 +18,11 @@ import Footer from './Components/Footer';
 import Slurmoptions from './Components/Slurmoptions';
 import Ldapoptions from './Components/Ldapoptions';
 import QuickUserSetup from './Components/QuickUserSetup';
+import UserLdiff from './Components/UserLdiff';
+import GroupLdiff from './Components/GroupLdiff';
+import LdapLog from './Components/Ldaplog';
+import UserUIDLog from './Components/UserUidLog';
+import UserGIDLog from './Components/UserGidLog';
 
 
 function App() {
@@ -48,6 +53,11 @@ function App() {
           <Route path="/ldap_update" element={<LdapUserUpdater></LdapUserUpdater>}/>
           <Route path="/slurm/options" element={<Slurmoptions></Slurmoptions>}/>
           <Route path="/quick-setup" element={<QuickUserSetup></QuickUserSetup>}/>
+          <Route path='/ldap/user-ldiff'element={<UserLdiff></UserLdiff>}/>
+          <Route path='/ldap/group-ldiff'element={<GroupLdiff></GroupLdiff>}/>
+          <Route path='/ldap/logs'element={<LdapLog></LdapLog>}/>
+          <Route path='/ldap/uid/logs' element={<UserUIDLog></UserUIDLog>}/>
+          <Route path='/ldap/gid/logs' element={<UserGIDLog></UserGIDLog>}/>
 
           </Routes>
           </div>

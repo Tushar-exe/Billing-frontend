@@ -30,7 +30,8 @@ const Qos = () => {
 
   const itemsPerPage = 10; // Number of records per page
 
-  const base_url=`http://192.168.200.131:8520`
+  // const base_url=`http://192.168.200.131:8520`
+  const base_url=`http://10.208.23.139:8520`
 
   // Fetch data for Active Qos
   const fetchActiveQos = () => {

@@ -34,11 +34,11 @@ const Sidebar = () => {
         </div>
         {open === 'ldap' && (
           <div className="submenu">
-            <NavLink to="/ldap/user/ldiff" className="submenu-item">User.ldiff</NavLink>
-            <NavLink to="/ldap/group/ldiff" className="submenu-item">Groups.ldiff</NavLink>
+            <NavLink to="/ldap/user-ldiff" className="submenu-item">User.ldiff</NavLink>
+            <NavLink to="/ldap/group-ldiff" className="submenu-item">Groups.ldiff</NavLink>
             <NavLink to="/ldap/uid/logs" className="submenu-item">User uid Log</NavLink>
-            <NavLink to="/ldap/guid/logs" className="submenu-item">User guid Log</NavLink>
-            <NavLink to="/ldap/logs" className="submenu-item">Ldap Logs</NavLink>
+            <NavLink to="/ldap/gid/logs" className="submenu-item">User guid Log</NavLink>
+            <NavLink to="/ldap/logs" className="submenu-item">Slapd Logs</NavLink>
 
           </div>
         )}
