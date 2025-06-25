@@ -29,12 +29,12 @@ function UserUIDLog() {
         const text = userData.entries.join("\n");
         navigator.clipboard.writeText(text);
 
-        toast('data copied')
+        toast.success('Data copied to clipboard!')
     };
 if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Uid Data....Please Wait</h6></div>;
   if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading logs.</p>
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{width:'95%'}}>
             <Card>
                 <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
                     <strong>User Uid's</strong>

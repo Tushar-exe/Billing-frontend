@@ -22,10 +22,12 @@ function LdapLog() {
         `http://10.208.23.139:8520/ldap/logs/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
-
+      console.log(offsetRef.current)
       setLogs((prev) => [...prev, ...newLogs.filter(log => !prev.includes(log))]);
       offsetRef.current += newLogs.length;
-
+      if(newLogs.length!==0 && offsetRef.current > 200){
+        toast.success("100 More Logs Loaded")
+      }
       if (res.data.total !== undefined) {
         setHasMore(offsetRef.current < res.data.total);
       } else {
@@ -68,7 +70,7 @@ function LdapLog() {
     return <p className="text-danger text-center mt-4">Error loading logs.</p>;
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{width:'95%'}}>
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
           <strong>LDAP Logs</strong>
