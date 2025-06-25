@@ -32,7 +32,8 @@ const Association = () => {
 
   //const base_url=`http://192.168.200.131:8080`
   //const base_url=`http://10.208.34.9:9000`
-  const base_url = `http://192.168.200.131:8520`
+  const base_url = `http://10.208.23.139:8520`
+  
 
   // Fetch data for Active Associations
   const fetchActiveAssociations = () => {

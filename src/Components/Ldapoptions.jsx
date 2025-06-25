@@ -50,7 +50,7 @@ const Ldapoptions=()=>{
                 bulk of the card's content.
               </Card.Text>
                <div className='button'>
-              <NavLink to='/ldap-update'>
+              <NavLink to='/ldap_update'>
               <Button  variant="primary">View Ldap Users</Button>
               </NavLink>
               </div>
@@ -63,14 +63,14 @@ const Ldapoptions=()=>{
               variant="top" src={logs_img}/>
               <Card.Body>
                 <div className='text'>
-                <Card.Title>LDAP RELATED LOGS</Card.Title>
+                <Card.Title>SLAPD RELATED LOGS</Card.Title>
                 </div>
                 <Card.Text >
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
               <div className='button'>
-              <NavLink to='/logs'>
+              <NavLink to='/ldap/logs'>
               <Button  variant="primary">View Logs</Button>
               </NavLink>
               </div>

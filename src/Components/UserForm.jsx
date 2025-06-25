@@ -14,7 +14,7 @@ const UserForm = () => {
   });
   const navigate = useNavigate();
 
-  const base_url = 'http://192.168.200.131:8520';
+  const base_url = 'http://10.208.23.139:8520';
   useEffect(() => {
     const url =`${base_url}/slurm/ldap_list/`
     fetch(url,{
