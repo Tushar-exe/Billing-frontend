@@ -55,24 +55,31 @@ const QuickUserSetup = () => {
 
             {/* Step Content */}
             {step === 1 && (
-                <div className="col-md-10 px-0">
-                    <Ldap/>
+                <div className="row">
+                    <div className="col-12 col-md-10 px-0">
+                        <Ldap />
+                    </div>
                 </div>
             )}
 
             {step === 2 && (
-                <div className="col-md-10 px-0">
-                    <UserForm/>
+                <div className="row">
+                <div className="col-12 col-md-10 px-0">
+                    <UserForm />
+                </div>
                 </div>
             )}
 
             {step === 3 && (
+                <div className="row">
                 <div className="col-md-10 px-0">
-                    <AccountWithQos/>
+                    <AccountWithQos />
+                </div>
                 </div>
             )}
 
             {step === 4 && (
+                <div className="row">
                 <div className="col-md-10 px-0">
                     <h4>Step 4: Disk Quota</h4>
                     <form>
@@ -82,16 +89,19 @@ const QuickUserSetup = () => {
                         </div>
                     </form>
                 </div>
+                </div>
             )}
 
             {/* Navigation Buttons */}
-            <div className="d-flex justify-content-between mt-4 col-md-10 px-0">
-                <button className="btn btn-secondary" onClick={prevStep} disabled={step === 1}>
-                    Back
-                </button>
-                <button className="btn btn-primary" onClick={nextStep} disabled={step === steps.length}>
-                    Next
-                </button>
+            <div className="row mt-4 mb-5">
+                <div className="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-between gap-2 px-0">
+                    <button className="btn btn-secondary" onClick={prevStep} disabled={step === 1}>
+                        Back
+                    </button>
+                    <button className="btn btn-primary" onClick={nextStep} disabled={step === steps.length}>
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     );

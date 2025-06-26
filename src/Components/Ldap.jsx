@@ -103,7 +103,7 @@ const Ldap = () => {
         </div>
       )}
 
-      <div className="container mt-5 mb-5 me-2">
+      <div className="container mt-5 mb-5">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -114,7 +114,7 @@ const Ldap = () => {
               <div className="row shadow p-4" style={{ background: '#fff', borderRadius: '8px' }}>
                 <h2 className="text-center mb-4">ADD USER TO LDAP</h2>
 
-                <div className="col-md-6 border-end fade-in-left">
+                <div className="col-12 col-md-6 border-end fade-in-left mb-4 mb-md-0">
                   <div className="mb-3">
                     <label>Display Name:</label>
                     <Field type="text" name="displayName" className="form-control" />
@@ -174,7 +174,7 @@ const Ldap = () => {
                   </div>
                 </div>
 
-                <div className="col-md-6 fade-in-right">
+                <div className="col-12 col-md-6 fade-in-right">
                      <div className="mb-3">
                     <label>Application:</label>
                     <Field type="text" name="app" className="form-control" />
