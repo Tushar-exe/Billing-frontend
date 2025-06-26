@@ -2,6 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Spinner } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
+import errorImage from '../Assets/image2.png';
+import '../App.css';
+
+
 function GroupLdiff() {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -39,8 +43,17 @@ function GroupLdiff() {
     };
 
 
-if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Group Data....Please Wait</h6></div>
-  if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading Group data......</p>
+    if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Group Data....Please Wait</h6></div>
+    // if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading Group data......</p>
+
+
+
+    if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
+          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+          <h4 className="text-danger">Oops! Something went wrong...</h4>
+          <p className="text-muted">An unexpected error occurred while fetching data.</p>
+        </div>
+
 
     return (
         <div className="container">
