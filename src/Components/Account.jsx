@@ -252,6 +252,8 @@ const Account= ()=>{
           {showActiveAccount ? 'Active Account' : 'All Active Accounts'}
         </h1>
 
+      <div className='d-flex flex-row justify-content-between'>
+
         {/* Toggle Button */}
         <div className="toggle-button d-flex justify-content-start mb-3 ">
           <button
@@ -263,6 +265,22 @@ const Account= ()=>{
           <button className="btn btn-info me-2" onClick={handleCreateAccount}>Add New Account</button>
           <button className="btn btn-info me-2" onClick={handleModifyAccount}>Add Qos To Account</button>
         </div>
+
+        {/* Search Box */}
+        <div className="d-flex justify-content-end mb-3">
+          <input
+            type="text"
+            className="form-control w-auto me-2"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="btn btn-primary" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
+
+      </div>
 
         {showAddAccountModal && (
           <div className="modal show">
@@ -309,19 +327,7 @@ const Account= ()=>{
           </div>
         )}
 
-        {/* Search Box */}
-        <div className="d-flex justify-content-end mb-3">
-          <input
-            type="text"
-            className="form-control w-auto me-2"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button className="btn btn-primary" onClick={handleSearch}>
-            Search
-          </button>
-        </div>
+        
 
         {/* Table Display */}
         <table className="table table-striped table-bordered">

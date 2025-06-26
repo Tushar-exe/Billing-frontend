@@ -285,6 +285,8 @@ const Association = () => {
           {showActiveSlurm ? 'Active Associations' : 'All Associations'}
         </h1>
 
+      <div className='d-flex flex-row justify-content-between'>
+
         {/* Toggle Button */}
         <div className="toggle-button d-flex justify-content-start mb-3 ">
           <button
@@ -308,6 +310,8 @@ const Association = () => {
             Search
           </button>
         </div>
+
+      </div>
 
         {/* Table Display */}
         <table className="table table-striped table-bordered">

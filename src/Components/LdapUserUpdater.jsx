@@ -104,7 +104,7 @@ const LdapUserUpdater = () => {
         </div>
       )}
       {error && (
-        <div className="text-center mt-5">
+        <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
           <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
           <h4 className="text-danger">Oops! Something went wrong...</h4>
           <p className="text-muted">An unexpected error occurred while fetching data.</p>

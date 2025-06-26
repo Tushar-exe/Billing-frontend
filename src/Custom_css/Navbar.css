@@ -1,12 +1,37 @@
 .navbar-fixed {
   position: fixed;
-  top: 70px; /* same as header height */
+  top: 70px; /* Adjust this to match header height */
   left: 0;
   width: 100%;
   z-index: 1040;
-  height: 50px;
 }
 
-.custom-navbar {
-  background-color: #0b559e;/* light bluish-gray */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #0b559e;
+    padding: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
 }
+
+
+
+
+
+
+/* .navbar-fixed {
+  position: fixed;
+  top: 70px; /* same as header height */
+  /* left: 0;
+  width: 100%;
+  z-index: 1040;
+  height: 50px;
+} */
+
+/* .custom-navbar {
+  background-color: #0b559e;/* light bluish-gray */
+/* } */ 
