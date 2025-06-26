@@ -132,7 +132,7 @@ const User = () => {
         <h1 className="mb-4 mt-5 d-flex justify-content-center">
           {showUser ? 'Active users' : 'All Users'}
         </h1>
-
+        <div className='d-flex flex-row justify-content-between'>
         <div className="toggle-button d-flex justify-content-start mb-3">
           <button className="btn btn-info me-2" onClick={handleShowUser}>
             {showUser ? 'Show All Users' : 'Show Active Users'}
@@ -153,6 +153,7 @@ const User = () => {
           <button className="btn btn-primary" onClick={handleSearch}>
             Search
           </button>
+        </div>
         </div>
 
         <table className="table table-striped table-bordered">

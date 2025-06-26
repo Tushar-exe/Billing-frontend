@@ -246,6 +246,8 @@ return (
             <h1 className="mb-4 mt-5 d-flex justify-content-center">
               {showActiveQos ? 'Active Qos Data' : 'All Qos Data'}
             </h1>
+
+          <div className='d-flex flex-row justify-content-between'>
             {/* Toggle Button */}
             <div className="toggle-button d-flex justify-content-start mb-3 ">
               <button className="btn btn-info me-2" onClick={handleShowQos}>
@@ -255,7 +257,6 @@ return (
                 Add New Qos
               </button>
             </div>
-  
             {/* Search Box */}
             <div className="d-flex justify-content-end mb-3">
               <input
@@ -269,6 +270,7 @@ return (
                 Search
               </button>
             </div>
+          </div>
   
             {/* Table Display */}
             <table className="table table-striped table-bordered">
