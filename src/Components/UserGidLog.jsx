@@ -34,7 +34,7 @@ function UserGIDLog() {
         toast.success('Data copied to clipboard!')
     };
 if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Gid Data....Please Wait</h6></div>;
-//   if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading logs.</p>
+
 
     if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
           <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
