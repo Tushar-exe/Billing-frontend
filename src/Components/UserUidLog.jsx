@@ -31,7 +31,7 @@ function UserUIDLog() {
 
         toast('data copied')
     };
-if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Uid Data....Please Wait</h6></div>;
+if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Uid Data....Please Wait</h6></div>
   if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading logs.</p>
     return (
         <div className="container mt-5">
