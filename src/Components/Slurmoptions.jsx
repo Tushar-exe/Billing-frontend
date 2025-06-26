@@ -7,6 +7,7 @@ import user_img from '../Assets/user.jpg';
 import assoc_img from '../Assets/assoc.jpg';
 import account_img from '../Assets/account.jpg';
 import logs_img from '../Assets/logs.jpg';
+import qosImage from '../Assets/qosImage.png';
 import { NavLink } from 'react-router-dom';
 
 const Slurmoptions = () => {
@@ -59,7 +60,7 @@ const Slurmoptions = () => {
         <Col md={4}>
           <Card className='rounded-3 shadow'>
             <Card.Img className='card-img mx-auto d-block mt-3'
-            variant="top" src={assoc_img} />
+            variant="top" src={assoc_img } />
             <Card.Body>
               <div className='text'>
               <Card.Title>SLURM ASSOCIATION DETAILS</Card.Title>
@@ -80,7 +81,7 @@ const Slurmoptions = () => {
           <Col md={{ span: 4, offset: 2 }}>
             <Card className='rounded-3 shadow'>
               <Card.Img className='card-img mx-auto d-block mt-3'
-              variant="top" src={assoc_img} />
+              variant="top" src={qosImage} />
               <Card.Body>
                 <div className='text'>
                 <Card.Title>SLURM QOS DETAILS</Card.Title>
