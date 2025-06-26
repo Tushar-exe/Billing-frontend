@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card, Spinner } from "react-bootstrap";
+import { Button, Card, Spinner } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
+import errorImage from '../Assets/image2.png';
+
 function UserLdiff() {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -18,13 +21,43 @@ function UserLdiff() {
                 setLoading(false);
             });
     }, []);
-if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading User Data....Please Wait</h6></div>
-  if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading data.....</p>
+
+    const copyLogs = () => {
+    if (!userData || !userData.user_ldif) return;
+
+    const entries = Object.entries(userData.user_ldif).map(([key, value]) => {
+        // If value is an array (e.g., objectClass), join its elements
+        if (Array.isArray(value)) {
+            return `${key}: ${value.join(", ")}`;
+        }
+        return `${key}: ${value}`;
+    });
+
+    const text = entries.join("\n");
+    navigator.clipboard.writeText(text)
+        toast.success('Data copied to clipboard!')
+        // .catch((err) => toast.error('Failed to copy logs'));
+};
+
+    if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading User Data....Please Wait</h6></div>
+    // if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading User data.....</p>
+
+
+    if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
+          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+          <h4 className="text-danger">Oops! Something went wrong...</h4>
+          <p className="text-muted">An unexpected error occurred while fetching data.</p>
+        </div>
+
+
     return (
         <div className="container">
           <div className="d-flex flex-wrap justify-content-center">
             <Card style={{ width: '45rem', height: '45rem', margin: '10px', backgroundColor: 'rgb(253, 253, 253)' }}>
-                <Card.Header className="d-flex flex-wrap justify-content-center bg-dark text-white"><h5> User.ldif FILE DATA</h5><br/></Card.Header>
+                <Card.Header className="d-flex flex-row justify-content-between bg-dark text-white"><h5> User.ldif FILE DATA</h5><br/>
+                <Button variant="outline-light" size="sm" onClick={copyLogs}>
+                    Copy Data
+                </Button></Card.Header>
                 <Card.Body style={{overflowX:'auto',overflowY:'auto'}}>
             <pre>
                 <strong>Display Name          : {userData.user_ldif?.displayName[0]}</strong><br/>
@@ -63,6 +96,7 @@ if (loading) return <div className="text-center mt-4 text-primary " style={{top:
                 </Card.Body>
             </Card>
             </div>
+            <ToastContainer/>
         </div>
     );
 }

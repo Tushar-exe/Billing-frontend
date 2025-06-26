@@ -3,6 +3,8 @@ import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import { Card, Spinner, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
+import errorImage from '../Assets/image2.png';
+
 
 function LdapLog() {
   const [logs, setLogs] = useState([]);
@@ -22,10 +24,12 @@ function LdapLog() {
         `http://10.208.23.139:8520/ldap/logs/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
-
+      console.log(offsetRef.current)
       setLogs((prev) => [...prev, ...newLogs.filter(log => !prev.includes(log))]);
       offsetRef.current += newLogs.length;
-
+      if(newLogs.length!==0 && offsetRef.current > 200){
+        toast.success("100 More Logs Loaded")
+      }
       if (res.data.total !== undefined) {
         setHasMore(offsetRef.current < res.data.total);
       } else {
@@ -64,11 +68,17 @@ function LdapLog() {
     fetchLogs(); // Fetch initial logs on mount
   }, []);
 
-  if (error)
-    return <p className="text-danger text-center mt-4">Error loading logs.</p>;
+  // if (error)
+  //   return <p className="text-danger text-center mt-4">Error loading logs.</p>;
+
+      if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
+          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+          <h4 className="text-danger">Oops! Something went wrong...</h4>
+          <p className="text-muted">An unexpected error occurred while fetching data.</p>
+        </div>
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{width:'95%'}}>
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
           <strong>LDAP Logs</strong>

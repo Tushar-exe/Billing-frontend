@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Spinner, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
+import errorImage from '../Assets/image2.png';
+
 function UserGIDLog() {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -18,7 +20,7 @@ function UserGIDLog() {
                 setError(err);
                 setLoading(false);
             });
-    }, []);
+    }, []); 
     const highlightLog = (log) => {
         if (log.includes("ERROR")) return <span className="text-danger">{log}</span>;
         if (log.includes("WARNING")) return <span className="text-warning">{log}</span>;
@@ -29,12 +31,19 @@ function UserGIDLog() {
         const text = userData.entries.join("\n");
         navigator.clipboard.writeText(text);
         // alert("Logs copied to clipboard!");
-        toast('logs copied')
+        toast.success('Data copied to clipboard!')
     };
 if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Gid Data....Please Wait</h6></div>;
-  if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading logs.</p>
+//   if (error) return <p className="text-danger" style={{top:'40%',left:'45%',position:'absolute'}}>Error loading logs.</p>
+
+    if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
+          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+          <h4 className="text-danger">Oops! Something went wrong...</h4>
+          <p className="text-muted">An unexpected error occurred while fetching data.</p>
+        </div>
+
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{width:'95%'}}>
             <Card>
                 <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
                     <strong>Gid Data</strong>
