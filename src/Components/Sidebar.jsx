@@ -22,7 +22,7 @@ const Sidebar = () => {
         <div className="menu-section">
         <NavLink to="/quick-setup"style={{ textDecoration: "none", color: "inherit" }}>
             <div className="menu-title">
-                 <i className="bi bi-person-vcard-fill me-1"></i> QUICK USER SETUP
+                 <i className="bi bi-person-vcard-fill me-1"></i> QUICK SETUP
             </div>
         </NavLink>
         </div>

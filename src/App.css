@@ -113,14 +113,10 @@ sort-arrow {
   margin-bottom: 10px;
 }
 
-
-
-
-
 /* Main content styles */
 /* Main Content */
 .container {
-  margin-left: 80px; /* If you have a sidebar */
+  margin-left: 75px; /* If you have a sidebar */
   margin-top: 80px;  /* Adjusted for fixed header + navbar */
   padding: 20px;
 }
@@ -137,6 +133,7 @@ sort-arrow {
   margin-left: 130px; 
   padding: 20px;
 } */
+
 
 
 .pagination-container {

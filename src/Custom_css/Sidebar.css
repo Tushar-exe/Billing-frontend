@@ -1,6 +1,7 @@
 .custom-sidebar {
   top: 120px;
-  
+  height: 75vh;
+  scrollbar-width: none;
   /* bottom: 5px; */
   width: 50px; 
   background-color: #f8f9fa;
@@ -21,7 +22,7 @@
 
 /* Hover to expand */
 .custom-sidebar:hover {
-  width: 200px;
+  width: 170px;
   padding: 20px 15px;
 }
 
