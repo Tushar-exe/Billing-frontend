@@ -23,7 +23,7 @@ const Slurmoptions = () => {
 
             <Card.Body>
               <div className='text'>
-              <Card.Title>SLURM USER DETAILS</Card.Title>
+              <Card.Title>USER DETAILS</Card.Title>
               </div>
               <Card.Text>
                 Some quick example text to build on the card title and make up the
@@ -43,7 +43,7 @@ const Slurmoptions = () => {
             variant="top" src={account_img} />
             <Card.Body>
               <div className='text'>
-              <Card.Title>SLURM ACCOUNT DETAILS</Card.Title>
+              <Card.Title>ACCOUNT DETAILS</Card.Title>
               </div>
               <Card.Text >
                 Some quick example text to build on the card title and make up the
@@ -60,10 +60,10 @@ const Slurmoptions = () => {
         <Col md={4}>
           <Card className='rounded-3 shadow'>
             <Card.Img className='card-img mx-auto d-block mt-3'
-            variant="top" src={assoc_img } />
+            variant="top" src={assoc_img} />
             <Card.Body>
               <div className='text'>
-              <Card.Title>SLURM ASSOCIATION DETAILS</Card.Title>
+              <Card.Title>ASSOCIATION DETAILS</Card.Title>
               </div>
               <Card.Text>
                 Some quick example text to build on the card title and make up the
@@ -84,7 +84,7 @@ const Slurmoptions = () => {
               variant="top" src={qosImage} />
               <Card.Body>
                 <div className='text'>
-                <Card.Title>SLURM QOS DETAILS</Card.Title>
+                <Card.Title>QOS DETAILS</Card.Title>
                 </div>
                 <Card.Text>
                   Some quick example text to build on the card title and make up the
@@ -104,7 +104,7 @@ const Slurmoptions = () => {
               variant="top" src={logs_img}/>
               <Card.Body>
                 <div className='text'>
-                <Card.Title>SLURM RELATED LOGS</Card.Title>
+                <Card.Title>RELATED LOGS</Card.Title>
                 </div>
                 <Card.Text >
                   Some quick example text to build on the card title and make up the

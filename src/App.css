@@ -120,9 +120,16 @@ sort-arrow {
 /* Main content styles */
 /* Main Content */
 .container {
-  margin-left: 90px; /* If you have a sidebar */
-  margin-top: 50px;  /* Adjusted for fixed header + navbar */
+  margin-left: 80px; /* If you have a sidebar */
+  margin-top: 80px;  /* Adjusted for fixed header + navbar */
   padding: 20px;
+}
+@media (max-width: 768px) {
+  .container {
+    margin-left: 0;       /* Remove sidebar space */
+    margin-top: 60px;     /* Reduce top space if navbar is smaller */
+    padding: 10px;
+  }
 }
 
 /* .main-content {
@@ -216,9 +223,3 @@ sort-arrow {
 }
 
 
-.footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
