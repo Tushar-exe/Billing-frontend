@@ -254,16 +254,24 @@ const Account= ()=>{
 
       <div className='d-flex flex-row justify-content-between'>
 
-        {/* Toggle Button */}
-        <div className="toggle-button d-flex justify-content-start mb-3 ">
-          <button
-            className="btn btn-info me-2"
-            onClick={handleShowAccount} // Toggle between Active Associations and All Associations
-          >
-            {showActiveAccount ? 'Show All Account' : 'Show Active Account'}
-          </button>
-          <button className="btn btn-info me-2" onClick={handleCreateAccount}>Add New Account</button>
-          <button className="btn btn-info me-2" onClick={handleModifyAccount}>Add Qos To Account</button>
+        <div className='d-flex flex-row justify-content-start'>
+          <div className="d-flex flex-row mb-3">
+            <button className="btn btn-primary" onClick={() => {
+              navigate(-1);
+              }}>Back</button>
+          </div>
+
+          {/* Toggle Button */}
+          <div className="toggle-button d-flex mb-3 ms-2 ">
+            <button
+              className="btn btn-info me-2"
+              onClick={handleShowAccount} // Toggle between Active Associations and All Associations
+            >
+             {showActiveAccount ? 'Show All Account' : 'Show Active Account'}
+            </button>
+            <button className="btn btn-info me-2" onClick={handleCreateAccount}>Add New Account</button>
+           <button className="btn btn-info me-2" onClick={handleModifyAccount}>Add Qos To Account</button>
+          </div>
         </div>
 
         {/* Search Box */}

@@ -248,8 +248,14 @@ return (
             </h1>
 
           <div className='d-flex flex-row justify-content-between'>
+            <div className='d-flex flex-row justify-content-start'>
+                <div className="d-flex flex-row mb-3">
+                  <button className="btn btn-primary" onClick={() => {
+                  navigate(-1);
+                }}>Back</button>
+        </div>            
             {/* Toggle Button */}
-            <div className="toggle-button d-flex justify-content-start mb-3 ">
+            <div className="toggle-button d-flex justify-content-start mb-3 ms-2">
               <button className="btn btn-info me-2" onClick={handleShowQos}>
                 {showActiveQos ? 'Show All Qos' : 'Show Active Qos'}
               </button>
@@ -257,6 +263,9 @@ return (
                 Add New Qos
               </button>
             </div>
+          </div>
+
+
             {/* Search Box */}
             <div className="d-flex justify-content-end mb-3">
               <input

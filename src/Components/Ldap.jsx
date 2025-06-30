@@ -172,6 +172,7 @@ const Ldap = () => {
                     <Field type="text" name="sub_domain" className="form-control" />
                     <ErrorMessage name="sub_domain" component="div" className="text-danger" />
                   </div>
+                  
                 </div>
 
                 <div className="col-12 col-md-6 fade-in-right">
@@ -267,9 +268,12 @@ const Ldap = () => {
         </div>
         
       )}
-      {/* <button className='btn btn-primary' onClick={()=>{navigate('/ldap/options')}}>
+      <div className='pb-2'>
+        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/ldap/options')}}>
         BACK
-      </button> */}
+      </button>
+      <br/>
+      </div>
     </>
   );
 };

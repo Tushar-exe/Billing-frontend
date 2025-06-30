@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Card, Spinner, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import errorImage from '../Assets/image2.png';
+import { useNavigate } from "react-router-dom";
 
 
 function LdapLog() {
@@ -13,7 +14,7 @@ function LdapLog() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const offsetRef = useRef(0);
-
+  const navigate = useNavigate();
   const fetchLogs = async () => {
     
     if (loading) return;
@@ -79,6 +80,11 @@ function LdapLog() {
 
   return (
     <div className="container mt-5" style={{width:'95%'}}>
+          <button className="btn btn-primary mb-2" onClick={() => {
+              navigate(-1);
+            }} >Back
+          </button>
+ 
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
           <strong>LDAP Logs</strong>

@@ -366,13 +366,24 @@ const User = () => {
           {showUser ? 'Active users' : 'All Users'}
         </h1>
         <div className='d-flex flex-row justify-content-between'>
-        <div className="toggle-button d-flex justify-content-start mb-3">
+
+        <div className='d-flex flex-row justify-content-start'>
+          <div className="d-flex flex-row mb-3">
+            <button className="btn btn-primary" onClick={() => {
+              navigate(-1);
+              }}>Back</button>
+          </div>
+
+
+        <div className="toggle-button d-flex mb-3 ms-2">
           <button className="btn btn-info me-2" onClick={handleShowUser}>
             {showUser ? 'Show All Users' : 'Show Active Users'}
           </button>
           <button className="btn btn-info me-2" onClick={() => navigate('/user_form')}>
             Add Existing Ldap User to Slurm
           </button>
+        </div>
+
         </div>
 
         <div className="d-flex justify-content-end mb-3">

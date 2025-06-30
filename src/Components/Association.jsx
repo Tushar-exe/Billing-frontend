@@ -3,6 +3,7 @@ import '../App.css'; // Your CSS file
 import errorImage from '../Assets/image2.png';
 import successImage from '../Assets/success.png';
 import Pagination from './Pagination'; // Import the Pagination component
+import { useNavigate } from 'react-router-dom';
 
 const Association = () => {
   const [data, setData] = useState(null);
@@ -22,6 +23,7 @@ const Association = () => {
   const [updateModalData, setUpdateModalData] = useState(null);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [qos, setQos] = useState([]);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     qos: '',
@@ -286,15 +288,22 @@ const Association = () => {
         </h1>
 
       <div className='d-flex flex-row justify-content-between'>
+      <div className='d-flex flex-row justify-content-start'>
+        <div className="d-flex flex-row mb-3">
+          <button className="btn btn-primary" onClick={() => {
+              navigate(-1);
+            }}>Back</button>
+        </div>
 
         {/* Toggle Button */}
-        <div className="toggle-button d-flex justify-content-start mb-3 ">
+        <div className="toggle-button mb-3 ms-2">
           <button
             className="btn btn-info me-2"
             onClick={handleShowSlurm} // Toggle between Active Associations and All Associations
           >
             {showActiveSlurm ? 'Show All Associations' : 'Show Active Associations'}
           </button>
+        </div>
         </div>
 
         {/* Search Box */}

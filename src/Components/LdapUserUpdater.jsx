@@ -114,14 +114,16 @@ const LdapUserUpdater = () => {
         <div>
           <br />
 
-          <div className="d-flex flex-row justify-content-between align-items-center mt-5 mb-4 px-4">
-            <div className="d-flex flex-row" style={{ cursor: 'pointer', position: 'absolute', top: '25%', left: '18%' }}>
-              <button className="btn btn-primary" onClick={() => {
+          <div className="d-flex flex-row justify-content-between mt-5 mb-2 px-4">
+            <div className="d-flex flex-row justify-content-start" style={{position:'absolute',left:'11%'}}>
+              <button className="btn btn-primary ms-5" onClick={() => {
                 navigate(-1);
-              }}>Back</button>
+              }} >Back</button>
             </div>
-            <div style={{ left: '50%', width: '33%' }}></div> {/* Left spacer */}
-            <h2 className="text-center mb-0" style={{ color: 'black', width: '33%' }}>
+            <div style={{ left: '50%', width: '33%' }}>
+              
+            </div> {/* Left spacer */}
+            <h2 className="justify-content-center mb-0" style={{ color: 'black', width: '33%' }}>
               <strong>LIST OF LDAP USERS</strong>
             </h2>
 
@@ -161,14 +163,14 @@ const LdapUserUpdater = () => {
                       <pre className='d-flex flex-column' style={{ fontFamily: 'monospace', fontSize: '1rem', overflowX: 'hidden' }}>
                         <Card.Subtitle className="mb-2 text-muted"><b><strong></strong>CN             : {user.uid}</b></Card.Subtitle>
                         <Card.Subtitle className="mb-2 text-muted"><b>UID            : {user.uid}</b></Card.Subtitle>
-                        <strong>DN             : {user.dn}</strong>
-                        <strong>Uid Number     : {user.uidNumber}</strong>
-                        <strong>GidNumber      : {user.gidNumber}</strong>
-                        <strong>Home Directory : {user.homeDirectory}</strong>
-                        <strong>Login Shell    : {user.loginShell}</strong>
-                        <strong>Email          : {user.mail}</strong>
-                        <strong>Given Name     : {user.givenName}</strong>
-                        <strong>SN             : {user.sn}</strong>
+                        <strong>dn             : {user.dn}</strong>
+                        <strong>uidNumber      : {user.uidNumber}</strong>
+                        <strong>gidNumber      : {user.gidNumber}</strong>
+                        <strong>homeDirectory  : {user.homeDirectory}</strong>
+                        <strong>loginShell     : {user.loginShell}</strong>
+                        <strong>mail           : {user.mail}</strong>
+                        <strong>givenName      : {user.givenName}</strong>
+                        <strong>sn             : {user.sn}</strong>
                         <strong>objectClass    : {user.objectClass.map((type, index) => {
                           return <h6><b>                 - {type}</b></h6>
                         })}</strong>
