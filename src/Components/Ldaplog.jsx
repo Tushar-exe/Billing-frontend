@@ -80,10 +80,6 @@ function LdapLog() {
 
   return (
     <div className="container mt-5" style={{width:'95%'}}>
-          <button className="btn btn-primary mb-2" onClick={() => {
-              navigate(-1);
-            }} >Back
-          </button>
  
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
@@ -125,6 +121,12 @@ function LdapLog() {
           </div>
         </Card.Body>
       </Card>
+      <div className='pb-2 pt-2'>
+        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/ldap/options')}}>
+        BACK
+      </button>
+      <br/>
+      </div>
       <ToastContainer />
     </div>
   );

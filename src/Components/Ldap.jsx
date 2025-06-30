@@ -268,12 +268,7 @@ const Ldap = () => {
         </div>
         
       )}
-      <div className='pb-2'>
-        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/ldap/options')}}>
-        BACK
-      </button>
-      <br/>
-      </div>
+      
     </>
   );
 };
