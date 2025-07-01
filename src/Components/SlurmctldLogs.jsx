@@ -120,7 +120,7 @@ function SlurmctldLog() {
         </Card.Body>
       </Card>
       <div className='pb-2 pt-2'>
-        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/ldap/options')}}>
+        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/slurm/options')}}>
         BACK
       </button>
       <br/>

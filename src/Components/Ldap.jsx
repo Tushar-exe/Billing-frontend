@@ -179,17 +179,6 @@ const Ldap = () => {
         >
           {({ values, setValues }) => (
             <>
-              {/*  LDIF Upload Outside Form */}
-              {/* <div className="mb-4">
-                <label htmlFor="ldifUpload" className="form-label">Upload LDIF File:</label>
-                <input
-                  type="file"
-                  accept=".ldif,.txt"
-                  className="form-control"
-                  onChange={(e) => parseLdifFile(e, setValues)}
-                />
-              </div>  */}
-
               <Form>
                 <div className="row shadow p-4" style={{ background: '#fff', borderRadius: '8px' }}>
                   <h2 className="text-center mb-4">ADD USER TO LDAP</h2>
