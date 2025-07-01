@@ -329,7 +329,7 @@ const Ldap = () => {
                   </div>
                   <div className="text-center mt-2">
                     <p className="text-muted fs-5">
-                      <strong>Note:</strong> Only <code>.ldif</code> files are allowed to upload.
+                      <strong>Note:</strong> only<code>.ldif</code> files are allowed to upload.
                     </p>
                   </div>
                 </div>
