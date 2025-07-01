@@ -319,7 +319,7 @@ const Ldap = () => {
                   </div>
 
                   {/* LDIF File Upload */}
-                  <div className='d-flex flex-row justify-content-center'>
+                  <div className='d-flex flex-row justify-content-end'>
               <div className="mb-4 mt-4 d-flex flex-row" >
                 {/* <label htmlFor="ldifUpload" className="form-label">Upload LDIF File To Auto Fill The Form:</label> */}
                 <br/>
@@ -332,8 +332,9 @@ const Ldap = () => {
                 />
               </div>
               <div className="mt-4">
-                      <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
                       <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview Form</button>
+                      <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
+
               </div>
               </div>
                 </div>
