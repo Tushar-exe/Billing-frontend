@@ -75,7 +75,7 @@ const Ldap = () => {
   const parseLdifFile = (e, setValues) => {
     const file = e.target.files[0];
     if (!file) return;
-    if(file.name.substring(file.name.indexOf('.')+1) !== 'ldif'){
+    if (file.name.substring(file.name.indexOf('.') + 1) !== 'ldif') {
       toast.error("only ldif files are allowed to upload");
       return;
     }
@@ -308,26 +308,32 @@ const Ldap = () => {
                   </div>
 
                   {/* LDIF File Upload */}
-                  <div className='d-flex flex-row justify-content-end'>
-              <div className="mb-4 mt-4 d-flex flex-row" >
-                {/* <label htmlFor="ldifUpload" className="form-label">Upload LDIF File To Auto Fill The Form:</label> */}
-                <br/>
-                <input
-                  type="file"
-                  accept=".ldif,.txt"
-                  className="form-control"
-                  onChange={(e) => parseLdifFile(e, setValues)}
-                  style={{backgroundColor:'white'}}
-                />
-              </div>
-              <div className="mt-4">
-                      <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview Form</button>
+                  <div className='d-flex flex-row justify-content-center'>
+                    <div className="mb-4 mt-4 d-flex flex-row" >
+                      {/* <label htmlFor="ldifUpload" className="form-label">Upload LDIF File To Auto Fill The Form:</label> */}
+                      <br />
+                      <input
+                        type="file"
+                        accept=".ldif,.txt"
+                        className="form-control"
+                        onChange={(e) => parseLdifFile(e, setValues)}
+                        style={{ backgroundColor: 'white', maxWidth: '250px' }}
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview</button>
                       <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
-                      <button type="reset" className="btn btn-danger ms-2 me-2" >Reset</button>
-              </div>
-              </div>
+                      <button type="reset" className="btn btn-secondary ms-2 me-2" >Reset</button>
+                    </div>
+
+                  </div>
+                  <div className="text-center mt-2">
+                    <p className="text-muted fs-5">
+                      <strong>Note:</strong> Only <code>.ldif</code> files are allowed to upload.
+                    </p>
+                  </div>
                 </div>
-                
+
               </Form>
             </>
           )}
@@ -354,7 +360,7 @@ const Ldap = () => {
           </div>
         </div>
       )}
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };
