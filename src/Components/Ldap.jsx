@@ -323,7 +323,7 @@ const Ldap = () => {
               <div className="mt-4">
                       <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview Form</button>
                       <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
-
+                      <button type="reset" className="btn btn-danger ms-2 me-2" >Reset</button>
               </div>
               </div>
                 </div>
