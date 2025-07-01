@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import { Card, Spinner, Button } from "react-bootstrap";
@@ -7,7 +6,7 @@ import errorImage from '../Assets/image2.png';
 import { useNavigate } from "react-router-dom";
 
 
-function SlurmdbdLog() {
+function SlurmctldLog() {
   const [logs, setLogs] = useState([]);
   const [limit] = useState(100); // Number of lines per fetch
   const [hasMore, setHasMore] = useState(true);
@@ -22,7 +21,7 @@ function SlurmdbdLog() {
     
     try {
       const res = await axios.get(
-        `http://10.208.23.139:8520/slurm/slurmdbd-log/?offset=${offsetRef.current}&limit=${limit}`
+        `http://10.208.23.139:8520/slurm/slurmctld-log/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
       console.log(offsetRef.current)
@@ -82,7 +81,7 @@ function SlurmdbdLog() {
     <div className="container mt-5" style={{width:'95%'}}>
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
-          <strong>Slurmdbd Logs</strong>
+          <strong>Slurmctld Logs</strong>
           <div className="d-flex gap-2">
             <Button variant="outline-light bg-white text-dark " size="sm" onClick={copyLogs}>
               Copy Logs
@@ -131,5 +130,5 @@ function SlurmdbdLog() {
   );
 }
 
-export default SlurmdbdLog;
+export default SlurmctldLog;
 

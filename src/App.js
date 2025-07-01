@@ -24,6 +24,7 @@ import LdapLog from './Components/Ldaplog';
 import UserUIDLog from './Components/UserUidLog';
 import UserGIDLog from './Components/UserGidLog';
 import SlurmdbdLog from './Components/SlurmdbdLog';
+import SlurmctldLog from './Components/SlurmctldLogs';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route path='/ldap/uid/logs' element={<UserUIDLog></UserUIDLog>}/>
           <Route path='/ldap/gid/logs' element={<UserGIDLog></UserGIDLog>}/>
           <Route path='/slurm/slurmdbd-log' element={<SlurmdbdLog></SlurmdbdLog>}/>
+          <Route path='/slurm/slurmctld-log' element={<SlurmctldLog></SlurmctldLog>}/>
 
 
           </Routes>

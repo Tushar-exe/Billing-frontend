@@ -78,8 +78,8 @@ const Slurmoptions = () => {
           </Card>
         </Col>
         <Row className="g-4">
-          <Col md={{ span: 4, offset: 2 }}>
-            <Card className='rounded-3 shadow'>
+          <Col md={4}>
+            <Card className='rounded-3 shadow md-4'>
               <Card.Img className='card-img mx-auto d-block mt-3'
               variant="top" src={qosImage} />
               <Card.Body>
@@ -117,6 +117,27 @@ const Slurmoptions = () => {
               </div>
               </Card.Body>
             </Card>
+          </Col>
+          <Col md={4}>
+            <Card className='rounded-3 shadow'>
+              <Card.Img className='card-img mx-auto d-block mt-3' 
+              variant="top" src={logs_img}/>
+              <Card.Body>
+                <div className='text'>
+                <Card.Title>Slurmctld LOGS</Card.Title>
+                </div>
+                <Card.Text >
+                  Some quick example text to build on the card title and make up the
+                  bulk of the card's content.
+                </Card.Text>
+              <div className='button'>
+              <NavLink to='/slurm/slurmctld-log'>
+              <Button  variant="primary">View Logs</Button>
+              </NavLink>
+              </div>
+              </Card.Body>
+            </Card>
+                        
 
           </Col>
         </Row>
