@@ -51,7 +51,7 @@ const Sidebar = () => {
         </div>
         {open === 'slurm' && (
           <div className="submenu">
-            <NavLink to="/slurm/logs" className="submenu-item">Slurm Logs</NavLink>
+            <NavLink to="/slurm/slurmdbd-log" className="submenu-item">Slurm Logs</NavLink>
             <NavLink to="/slurm/info" className="submenu-item">Sinfo</NavLink>
             <NavLink to="/slurm/partition" className="submenu-item">Partition Names</NavLink>
           </div>
