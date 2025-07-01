@@ -49,7 +49,8 @@ function GroupLdiff() {
     return (
         <div className="container">
             <div className="d-flex flex-wrap justify-content-center">
-                <Card style={{ width: '60rem', height: '45rem', margin: '10px', backgroundColor: '#fdfdfd' }}>
+                {/* <Card style={{ width: '60rem', height: '45rem', margin: '10px', backgroundColor: '#fdfdfd' }}> */}
+                <Card style={{ width: '60rem',backgroundColor: '#fdfdfd' }}>
                     <Card.Header className="d-flex justify-content-between bg-dark text-white">
                         <h5>Group.ldif FILE DATA</h5>
                         <Button variant="outline-light" size="sm" onClick={copyLogs}>

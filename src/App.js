@@ -23,6 +23,7 @@ import GroupLdiff from './Components/GroupLdiff';
 import LdapLog from './Components/Ldaplog';
 import UserUIDLog from './Components/UserUidLog';
 import UserGIDLog from './Components/UserGidLog';
+import SlurmdbdLog from './Components/SlurmdbdLog';
 
 
 function App() {
@@ -58,6 +59,8 @@ function App() {
           <Route path='/ldap/logs'element={<LdapLog></LdapLog>}/>
           <Route path='/ldap/uid/logs' element={<UserUIDLog></UserUIDLog>}/>
           <Route path='/ldap/gid/logs' element={<UserGIDLog></UserGIDLog>}/>
+          <Route path='/slurm/slurmdbd-log' element={<SlurmdbdLog></SlurmdbdLog>}/>
+
 
           </Routes>
           </div>

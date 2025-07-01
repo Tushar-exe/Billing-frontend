@@ -104,14 +104,14 @@ const Slurmoptions = () => {
               variant="top" src={logs_img}/>
               <Card.Body>
                 <div className='text'>
-                <Card.Title>RELATED LOGS</Card.Title>
+                <Card.Title>Slurmdbd LOGS</Card.Title>
                 </div>
                 <Card.Text >
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
               <div className='button'>
-              <NavLink to='/logs'>
+              <NavLink to='/slurm/slurmdbd-log'>
               <Button  variant="primary">View Logs</Button>
               </NavLink>
               </div>
