@@ -19,6 +19,7 @@ const Ldap = () => {
     proj_name: '', pi: '', amt: '', fund: '', cpu: '', gpu: '',
     startDate: '', endDate: '', address: '', description: ''
   };
+  const fileInputRef = React.useRef(null);
 
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -75,21 +76,30 @@ const Ldap = () => {
   const parseLdifFile = (e, setValues) => {
     const file = e.target.files[0];
     if (!file) return;
-    console.log(file.name.substring(file.name.indexOf('.')+1))
-    if(file.name.substring(file.name.indexOf('.')+1).includes('.')){
+    console.log(file.name.substring(file.name.indexOf('.') + 1))
+    if (file.name.substring(file.name.indexOf('.') + 1).includes('.')) {
+      setValues({ ...initialValues });
       toast.error("not a valid file type");
       return;
     }
     if (file.name.substring(file.name.indexOf('.') + 1) !== 'ldif') {
+      setValues({ ...initialValues });
       toast.error("only ldif files are allowed to upload");
       return;
     }
 
     const reader = new FileReader();
     reader.onload = (event) => {
-      const content = event.target.result;
+      const content = event.target.result.trim();
+      if (!content) {
+        setValues({ ...initialValues });
+        toast.warn("Blank file uploaded");
+        return;
+      }
       const lines = content.split('\n');
       const data = {};
+
+      let validKeyFound = false;  // variable to check atleast one valid key should be present
 
       lines.forEach(line => {
         const [keyRaw, ...rest] = line.split(':');
@@ -101,6 +111,8 @@ const Ldap = () => {
 
 
         if (ldifToFormikMap[key]) {
+
+          validKeyFound = true; // changing the variable state to true if a valid key is present in the file 
           const formikKey = ldifToFormikMap[key];
 
           if (formikKey === 'startDate' || formikKey === 'endDate') {
@@ -113,8 +125,13 @@ const Ldap = () => {
           }
         }
       });
+      if (!validKeyFound) {            // if ldif file doesnot contain any valid data restting the form to initial values
+        setValues({ ...initialValues });
+        toast.error("File doesn't contain valid LDIF data. Form has been reset.");
+        return;
+      }
 
-      setValues(prev => ({ ...prev, ...data }));
+      setValues({ ...initialValues, ...data });
       // alert('LDIF file loaded successfully');
       toast.success('file uploaded')
     };
@@ -319,6 +336,7 @@ const Ldap = () => {
                       {/* <label htmlFor="ldifUpload" className="form-label">Upload LDIF File To Auto Fill The Form:</label> */}
                       <br />
                       <input
+                        ref={fileInputRef}
                         type="file"
                         accept=".ldif,.txt"
                         className="form-control"
@@ -329,7 +347,12 @@ const Ldap = () => {
                     <div className="mt-4">
                       <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview</button>
                       <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
-                      <button type="reset" className="btn btn-secondary ms-2 me-2" >Reset</button>
+                      <button type="reset" className="btn btn-secondary ms-2 me-2" onClick={() => {
+
+                        if (fileInputRef.current) {
+                          fileInputRef.current.value = null;
+                        }
+                      }}>Reset</button>
                     </div>
 
                   </div>
