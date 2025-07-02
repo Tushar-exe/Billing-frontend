@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 
-import Homecomponent from './Components/Homecomponent';
 import Report from './Components/Report'
 import User from './Components/User';
 import Qos from './Components/Qos';
@@ -25,7 +24,7 @@ import UserUIDLog from './Components/UserUidLog';
 import UserGIDLog from './Components/UserGidLog';
 import SlurmdbdLog from './Components/SlurmdbdLog';
 import SlurmctldLog from './Components/SlurmctldLogs';
-
+import HomeComponent from './Components/HomeComponent';
 
 function App() {
   return (
@@ -41,7 +40,7 @@ function App() {
             <Sidebar/>
           <Routes>
           {/* Define your routes here */}
-          <Route path="/" element={<Homecomponent></Homecomponent>} />
+          <Route path="/"element={<HomeComponent></HomeComponent>}/>
           <Route path="/associations" element={<Association></Association>} />
           <Route path="/reports" element={<Report></Report>} />
           <Route path="/users_list" element={<User></User>} />
