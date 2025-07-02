@@ -9,6 +9,7 @@ import test2 from '../Assets/test2.jpg';
 import test3 from '../Assets/test3.jpg';
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import '../Custom_css/Custom-card.css';
 
 const HomeComponent = () => {
 
