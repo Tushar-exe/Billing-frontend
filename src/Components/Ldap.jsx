@@ -75,6 +75,11 @@ const Ldap = () => {
   const parseLdifFile = (e, setValues) => {
     const file = e.target.files[0];
     if (!file) return;
+    console.log(file.name.substring(file.name.indexOf('.')+1))
+    if(file.name.substring(file.name.indexOf('.')+1).includes('.')){
+      toast.error("not a valid file type");
+      return;
+    }
     if (file.name.substring(file.name.indexOf('.') + 1) !== 'ldif') {
       toast.error("only ldif files are allowed to upload");
       return;
@@ -115,6 +120,7 @@ const Ldap = () => {
     };
 
     reader.readAsText(file);
+    e.target.files[0].value = null;
   };
 
   const handleSubmit = async (values) => {
