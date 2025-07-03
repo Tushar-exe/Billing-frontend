@@ -11,7 +11,7 @@ const Ldap = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const base_url = `http://192.168.200.131:8520`;
+  const base_url = `http://10.208.23.139:8520`;
 
   const initialValues = {
     displayName: '', userName: '', userEmail: '', organization: '', gender: '',
