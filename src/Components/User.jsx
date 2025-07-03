@@ -633,11 +633,11 @@ const User = () => {
 
   return (
     <>
-      <div className="container mt-4">
+      <div className="container mt-2">
         <h1 className="mb-4 mt-5 d-flex justify-content-center">
           {showUser ? 'Active users' : 'All Users'}
         </h1>
-        <div className='d-flex flex-row justify-content-between'>
+        <div className='d-flex flex-row justify-content-between'style={{ marginRight:'15px' }}>
           <div className='d-flex flex-row justify-content-start'>
             <div className="d-flex flex-row mb-3">
               <button className="btn btn-primary" onClick={() => { navigate(-1); }}>Back</button>
@@ -665,6 +665,7 @@ const User = () => {
           </div>
         </div>
 
+        <div class="table-responsive"style={{ marginRight:'20px' }}>
         <table className="table table-striped table-bordered">
           <thead className="table-dark">
             <tr>
@@ -736,6 +737,7 @@ const User = () => {
             ))}
           </tbody>
         </table>
+        </div>
 
         <Pagination
           currentPage={currentPage}

@@ -119,6 +119,7 @@ sort-arrow {
   margin-left: 75px; /* If you have a sidebar */
   margin-top: 80px;  /* Adjusted for fixed header + navbar */
   padding: 20px;
+  margin-right: 20px; 
 }
 @media (max-width: 768px) {
   .container {
