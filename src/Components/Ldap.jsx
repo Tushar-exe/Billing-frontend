@@ -367,6 +367,12 @@ const Ldap = () => {
             </>
           )}
         </Formik>
+        <div className='pb-2 pt-2 mt-2'>
+        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/ldap/options')}}>
+        BACK
+      </button>
+      <br/>
+      </div>
       </div>
 
       {showModal && (

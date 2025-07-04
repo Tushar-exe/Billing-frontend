@@ -136,8 +136,7 @@ const QuickUserSetup = () => {
           }
     
           setValues({ ...initialValues, ...data });
-          // alert('LDIF file loaded successfully');
-          toast.success('file uploaded')
+          toast.success('LDIF file loaded successfully')
         };
     
         reader.readAsText(file);
@@ -163,16 +162,16 @@ const QuickUserSetup = () => {
     
           const result = await response.json();
           if (result.message === 'User already exists in LDAP') {
-            alert('User already exists in LDAP');
+                      toast.warning('User already exists in LDAP');
           } else if (result.message === 'User added successfully to LDAP') {
             setStep(2);
-            alert('User created successfully in LDAP');
+                      toast.success('User created successfully in LDAP');
           } else {
-            alert('Error occurred in adding user in LDAP');
+                      toast.error('Error occurred in adding user in LDAP');
           }
         } catch (error) {
           console.error('Error submitting form:', error);
-          alert('Something went wrong.');
+                    toast.error('Something went wrong.');
           setStep(1);
         } finally {
           setLoading(false);
@@ -193,13 +192,7 @@ const QuickUserSetup = () => {
 
     const steps = ['LDAP', 'SLURM Account', 'QOS', 'Disk Quota'];
 
-    const nextStep = () => {
-        setStep(prev => Math.min(prev + 1, steps.length));
-    };
-
-    const prevStep = () => {
-        setStep(prev => Math.max(prev - 1, 1));
-    };
+    // Removed unused nextStep and prevStep functions as navigation buttons are no longer present
     // SLURM USERFORM.jsx
       const [uids, setUids] = useState([]);
       const [accounts, setAccounts] = useState([]);
@@ -227,7 +220,7 @@ const QuickUserSetup = () => {
             console.log("Fetched data:", data);
           })
           .catch(error => {
-            alert("Failed to fetch data.");
+                      toast.error("Failed to fetch data.");
             console.error('Error fetching UID/account list:', error);
           });
       }, [step]);
@@ -257,12 +250,12 @@ const QuickUserSetup = () => {
           const result = await response.json();
       
           if (response.ok) {
-            alert('User added successfully in SLURM');
+                      toast.success('User added successfully in SLURM');
             console.log("Server response:", result);
             setStep(3);
             // navigate('/users_list'); 
           } else {
-            alert('Error occurred while adding user in SLURM');
+                      toast.error('Error occurred while adding user in SLURM');
             setStep(2)
             console.error("Error response from server:", result);
           }
@@ -303,7 +296,7 @@ const QuickUserSetup = () => {
                     console.log("Fetched data:", data);
                 })
                 .catch(error => {
-                    alert("Failed to fetch data.");
+                              toast.error("Failed to fetch data.");
                     console.error('Error fetching UID/account list:', error);
                 });}
         }, [step]);
@@ -333,12 +326,12 @@ const QuickUserSetup = () => {
                 const result = await response.json();
     
                 if (response.ok) {
-                    alert('User added successfully in SLURM');
+                              toast.success('User added successfully in SLURM');
                     console.log("Server response:", result);
                     setStep(4);
                     // navigate('/users_list');
                 } else {
-                    alert('Error occurred while adding user in SLURM');
+                              toast.error('Error occurred while adding user in SLURM');
                     console.error("Error response from server:", result);
                     setStep(3);
                 }
@@ -741,16 +734,7 @@ const QuickUserSetup = () => {
             )}
 
             {/* Navigation Buttons */}
-            <div className="row mt-4 mb-5">
-                <div className="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-between gap-2 px-0">
-                    <button className="btn btn-secondary" onClick={prevStep} disabled={step === 1}>
-                        Back
-                    </button>
-                    <button className="btn btn-primary" onClick={nextStep} disabled={step === steps.length}>
-                        Next
-                    </button>
-                </div>
-            </div>
+            {/* Navigation Buttons removed as per user request */}
         </div>
     );
 };
