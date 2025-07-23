@@ -105,10 +105,7 @@ const GenerateBill = () => {
           console.log(response.data.users);
           setUsers(response.data.users); 
           // console.log(users)
-          toast.success("Users fetched successfully.");
-        } else {
-          toast.error("Failed to fetch users.");
-        }
+         }
       })
       .catch(error => {
         toast.error("Error fetching users: " + (error.response?.data || error.message));
@@ -122,14 +119,15 @@ const GenerateBill = () => {
 
   return (
     <>
-    <div className="container mt-5 animated-container" style={{ maxWidth: '800px', marginLeft: '150px' }}>
-      <div className="card shadow-lg p-4">
-        <h2 className="text-center mb-4 text-primary">Generate Bill</h2>
+    <div className="container mt-5 animated-container" style={{ width: 'auto'}}>
+      <div className="card shadow-lg p-4 mx-auto" style={{ maxWidth: '600px', height:'400px' }}>
+        <h3 className="text-center mb-4 text-primary"><strong>GENERATE USER BILL</strong></h3>
+        <br />
         <form onSubmit={handleSubmit}>
           <div className="row g-3 align-items-center mb-3">
             <div className="col-12 d-flex align-items-center mb-3 justify-content-center">
-              <label className="form-label fw-bold mb-0 me-3" style={{ minWidth: '100px' }}>
-                Username
+              <label className="form-label fw-bold mb-0 me-3">
+                Username :
               </label>
               <select
                 onChange={handleChange}
@@ -138,6 +136,7 @@ const GenerateBill = () => {
                 style={{ maxWidth: '300px' }}
                 placeholder="Enter username"
                 value={formData.username}
+                required
               >
                 <option value="">Select user</option>
                 {users.map((user) => (
@@ -147,8 +146,9 @@ const GenerateBill = () => {
                 ))}
               </select>
             </div>
-            <div className="col-6">
-              <label className="form-label fw-bold">Start Date</label>
+            <div className="d-flex justify-content-center align-items-center mb-3 gap-3">
+            <div className="col-4">
+              <label className="form-label fw-bold">Start Date :</label>
               <input
                 type="date"
                 name="starttime"
@@ -158,8 +158,8 @@ const GenerateBill = () => {
                 className="form-control"
               />
             </div>
-            <div className="col-6">
-              <label className="form-label fw-bold">End Date</label>
+            <div className="col-4">
+              <label className="form-label fw-bold">End Date :</label>
               <input
                 type="date"
                 name="endtime"
@@ -169,15 +169,16 @@ const GenerateBill = () => {
                 className="form-control"
               />
             </div>
+            </div>
           </div>
           <div className="d-flex justify-content-center align-items-center mt-4 gap-3 flex-wrap">
-            <button className="btn btn-primary px-4" type="submit">
+            <button className="btn btn-success px-4" type="submit">
               Generate Bill
             </button>
             {pdfUrl && (
               <button
                 type="button"
-                className="btn btn-success px-4"
+                className="btn btn-danger px-4"
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = pdfUrl;
@@ -198,7 +199,18 @@ const GenerateBill = () => {
 
         {/* {error && <div className="alert alert-danger mt-3 text-center">{error}</div>} */}
       </div>
-      {loading && (
+
+      {showiframe && (
+        <div className="text-center mt-3 pt-5">
+          <iframe
+            src={pdfUrl}
+            title="Generated Bill"
+            style={{ width: '80%', height: '500px', border: 'none' }}
+          ></iframe>
+        </div>
+      )}
+    </div>
+          {loading && (
         <div className="loading-overlay">
           <div className="spinner-border text-primary" role="status">
             <span className="visually-hidden">Processing...</span>
@@ -206,16 +218,6 @@ const GenerateBill = () => {
           <div className="text-white mt-2">Generating Bill... Please wait</div>
         </div>
       )}
-      {showiframe && (
-        <div className="text-center mt-3 pt-5">
-          <iframe
-            src={pdfUrl}
-            title="Generated Bill"
-            style={{ width: '100%', height: '500px', border: 'none' }}
-          ></iframe>
-        </div>
-      )}
-    </div>
           <ToastContainer />
 
     </>
