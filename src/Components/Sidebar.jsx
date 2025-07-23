@@ -66,7 +66,7 @@ const Sidebar = () => {
         {open === 'reports' && (
           <div className="submenu">
             <NavLink
-              to="/reports"
+              to="/billing"
               className={({ isActive }) =>
                 `submenu-item${isActive ? ' active' : ''}`
               }

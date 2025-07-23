@@ -28,7 +28,7 @@ const Navbar = () => {
               <Link className="nav-link fs-5 text-white" to="/slurm/options">Slurm</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-5 text-white" to="/reports">Billing</Link>
+              <Link className="nav-link fs-5 text-white" to="/billing">Billing</Link>
             </li>
           </ul>
         </div>

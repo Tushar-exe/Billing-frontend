@@ -25,6 +25,7 @@ import UserGIDLog from './Components/UserGidLog';
 import SlurmdbdLog from './Components/SlurmdbdLog';
 import SlurmctldLog from './Components/SlurmctldLogs';
 import HomeComponent from './Components/HomeComponent';
+import GenerateBill from './Components/GenerateBill';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route path='/ldap/gid/logs' element={<UserGIDLog></UserGIDLog>}/>
           <Route path='/slurm/slurmdbd-log' element={<SlurmdbdLog></SlurmdbdLog>}/>
           <Route path='/slurm/slurmctld-log' element={<SlurmctldLog></SlurmctldLog>}/>
+          <Route path='/billing' element={<GenerateBill></GenerateBill>}/>
           </Routes>
           </div>
           </div>
