@@ -29,10 +29,12 @@ const Account= ()=>{
   // const base_url=`http://10.208.34.9:9000`   //Shrestha Ip Address
   // const base_url = 'http://10.208.22.180:8520';
   
-  const base_url = 'http://paramrudra.pune.cdac.in:8520';
+  // const base_url = 'http://paramrudra.pune.cdac.in:8520';
+  const base_url = process.env.REACT_APP_BACKEND_URL;
   const navigate =useNavigate();
 
   const fetchActiveAccount = () => {
+    console.log(base_url)
     const url = `${base_url}/slurm/account/`;
     fetch(url, {
       method: 'GET',

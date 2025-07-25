@@ -11,7 +11,8 @@ const Ldap = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const base_url = `http://paramrudra.pune.cdac.in:8520`;
+  // const base_url = `http://paramrudra.pune.cdac.in:8520`;
+    const base_url = process.env.REACT_APP_BACKEND_URL;
 
   const initialValues = {
     displayName: '', userName: '', userEmail: '', organization: '', gender: '',

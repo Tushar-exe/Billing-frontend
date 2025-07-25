@@ -12,7 +12,8 @@ const AccountWithQos = () => {
     const navigate = useNavigate();
 
 // const base_url = 'http://10.208.22.180:8520';
-const base_url = 'http://paramrudra.pune.cdac.in:8520';
+// const base_url = 'http://paramrudra.pune.cdac.in:8520';
+  const base_url = process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
         const url = `${base_url}/slurm/ldap_list`

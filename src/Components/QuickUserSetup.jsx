@@ -15,8 +15,9 @@ const QuickUserSetup = () => {
       const [showModal, setShowModal] = useState(false);
       const [loading, setLoading] = useState(false);
       const navigate = useNavigate();
-      const base_url = `http://paramrudra.pune.cdac.in:8520`;
-    
+      // const base_url = `http://paramrudra.pune.cdac.in:8520`;
+        const base_url = process.env.REACT_APP_BACKEND_URL;
+
       const initialValues = {
         displayName: '', userName: '', userEmail: '', organization: '', gender: '',
         mob_no: '', institute: '', dept: '', desg: '', domain: '', sub_domain: '', app: '',
@@ -203,7 +204,7 @@ const QuickUserSetup = () => {
         qos: ''
       });
     
-      const base_urluser = 'http://10.208.23.139:8520';  //changed base_url to base_urluser because of ambiguity with the existing base_url of Ldap component
+      const base_urluser = `${base_url}`;  //changed base_url to base_urluser because of ambiguity with the existing base_url of Ldap component
       useEffect(() => {
         const url =`${base_urluser}/slurm/ldap_list/`
         fetch(url,{
@@ -277,7 +278,7 @@ const QuickUserSetup = () => {
         });
     
     // const base_url = 'http://10.208.22.180:8520';
-    const base_urlqos = 'http://10.208.23.139:8520';
+    const base_urlqos = `${base_url}`;  //changed base_url to base_urlqos because of ambiguity with the existing base_url of Ldap component
     
         useEffect(() => {
             if(step === 3){

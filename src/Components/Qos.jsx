@@ -31,7 +31,8 @@ const Qos = () => {
   const itemsPerPage = 10; // Number of records per page
 
   // const base_url=`http://192.168.200.131:8520`
-  const base_url=`http://paramrudra.pune.cdac.in:8520`
+  // const base_url=`http://paramrudra.pune.cdac.in:8520`
+    const base_url = process.env.REACT_APP_BACKEND_URL;
 
   // Fetch data for Active Qos
   const fetchActiveQos = () => {

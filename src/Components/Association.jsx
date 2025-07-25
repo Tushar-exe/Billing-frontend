@@ -34,8 +34,9 @@ const Association = () => {
 
   //const base_url=`http://192.168.200.131:8080`
   //const base_url=`http://10.208.34.9:9000`
-  const base_url = `http://paramrudra.pune.cdac.in:8520`
-  
+  // const base_url = `http://paramrudra.pune.cdac.in:8520`
+    const base_url = process.env.REACT_APP_BACKEND_URL;
+
 
   // Fetch data for Active Associations
   const fetchActiveAssociations = () => {

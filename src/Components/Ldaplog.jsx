@@ -15,6 +15,7 @@ function LdapLog() {
   const [error, setError] = useState(null);
   const offsetRef = useRef(0);
   const navigate = useNavigate();
+  const base_url = process.env.REACT_APP_BACKEND_URL;
   const fetchLogs = async () => {
     
     if (loading) return;
@@ -22,7 +23,7 @@ function LdapLog() {
     
     try {
       const res = await axios.get(
-        `http://paramrudra.pune.cdac.in:8520/ldap/logs/?offset=${offsetRef.current}&limit=${limit}`
+        `${base_url}/ldap/logs/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
       console.log(offsetRef.current)

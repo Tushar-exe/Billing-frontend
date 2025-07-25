@@ -12,6 +12,9 @@ const GenerateBill = () => {
   // const [error, setError] = useState("");
   const [pdfUrl, setPdfUrl] = useState("");
 
+    const base_url = process.env.REACT_APP_BACKEND_URL;
+
+
   // MMDDYY format validation
   const validateDate = (dateStr) => /^\d{6}$/.test(dateStr);
 
@@ -61,7 +64,7 @@ const GenerateBill = () => {
     }
 
     try {
-      const response = await axios.post("http://paramrudra.pune.cdac.in:8520/generateinvoice/bill/", { username, starttime, endtime }, {
+      const response = await axios.post(`${base_url}/generateinvoice/bill/`, { username, starttime, endtime }, {
         responseType: "blob"
       });
       // Download PDF automatically dont download
@@ -99,7 +102,7 @@ const GenerateBill = () => {
   }
 
   useEffect(() => {
-      axios.get("http://paramrudra.pune.cdac.in:8520/generateinvoice/getallusers/")
+      axios.get(`${base_url}/generateinvoice/getallusers/`)
       .then(response => {
         if (response.data) {
           console.log(response.data.users);

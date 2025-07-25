@@ -15,7 +15,8 @@ const AddNewQos = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const base_url=`http://paramrudra.pune.cdac.in:8520`
+    // const base_url=`http://paramrudra.pune.cdac.in:8520`
+  const base_url = process.env.REACT_APP_BACKEND_URL;
 
     const navigate = useNavigate();
     
