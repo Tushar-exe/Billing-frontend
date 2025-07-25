@@ -61,7 +61,7 @@ const GenerateBill = () => {
     }
 
     try {
-      const response = await axios.post("http://10.208.23.139:8520/generateinvoice/bill/", { username, starttime, endtime }, {
+      const response = await axios.post("http://paramrudra.pune.cdac.in:8520/generateinvoice/bill/", { username, starttime, endtime }, {
         responseType: "blob"
       });
       // Download PDF automatically dont download
@@ -99,7 +99,7 @@ const GenerateBill = () => {
   }
 
   useEffect(() => {
-      axios.get("http://10.208.23.139:8520/generateinvoice/getallusers/")
+      axios.get("http://paramrudra.pune.cdac.in:8520/generateinvoice/getallusers/")
       .then(response => {
         if (response.data) {
           console.log(response.data.users);

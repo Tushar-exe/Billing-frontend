@@ -34,7 +34,7 @@ const Association = () => {
 
   //const base_url=`http://192.168.200.131:8080`
   //const base_url=`http://10.208.34.9:9000`
-  const base_url = `http://10.208.23.139:8520`
+  const base_url = `http://paramrudra.pune.cdac.in:8520`
   
 
   // Fetch data for Active Associations
@@ -327,6 +327,14 @@ const Association = () => {
           <thead className="table-dark">
             <tr>
               <th>Sr No</th>
+              <th onClick={() => handleSort('user')} style={{ cursor: 'pointer' }}>
+                User
+                <span>{renderSortIcons('user')}</span>
+              </th>
+              <th onClick={() => handleSort('acct')} style={{ cursor: 'pointer' }}>
+                Account
+                <span>{renderSortIcons('acct')}</span>
+              </th>
               <th onClick={() => handleSort('qos')} style={{ cursor: 'pointer' }}>
                 QOS
                 <span>{renderSortIcons('qos')}</span>
@@ -343,14 +351,7 @@ const Association = () => {
                 Deleted
                 <span>{renderSortIcons('deleted')}</span>
               </th>
-              <th onClick={() => handleSort('user')} style={{ cursor: 'pointer' }}>
-                User
-                <span>{renderSortIcons('user')}</span>
-              </th>
-              <th onClick={() => handleSort('acct')} style={{ cursor: 'pointer' }}>
-                Account
-                <span>{renderSortIcons('acct')}</span>
-              </th>
+              
               <th onClick={() => handleSort('is_def')} style={{ cursor: 'pointer' }}>
                 Default Association
                 <span>{renderSortIcons('is_def')}</span>

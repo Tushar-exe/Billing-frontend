@@ -10,7 +10,7 @@ function UserUIDLog() {
     const [error, setError] = useState(null);
     useEffect(() => {
         axios
-            .get("http://10.208.23.139:8520/ldap/system-users/")
+            .get("http://paramrudra.pune.cdac.in:8520/ldap/system-users/")
             .then((res) => {
                 setUserData(res.data);
                 setLoading(false);

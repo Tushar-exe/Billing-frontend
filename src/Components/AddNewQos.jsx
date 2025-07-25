@@ -15,7 +15,7 @@ const AddNewQos = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const base_url=`http://10.208.23.139:8520`
+    const base_url=`http://paramrudra.pune.cdac.in:8520`
 
     const navigate = useNavigate();
     

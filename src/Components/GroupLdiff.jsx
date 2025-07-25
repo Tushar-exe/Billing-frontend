@@ -12,7 +12,7 @@ function GroupLdiff() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("http://10.208.23.139:8520/ldap/ldif-data")
+        axios.get("http://paramrudra.pune.cdac.in:8520/ldap/ldif-data")
             .then((res) => {
                 setLdifText(res.data.group_ldif);  // raw string from backend
                 setLoading(false);

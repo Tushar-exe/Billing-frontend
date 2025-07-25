@@ -22,7 +22,7 @@ function LdapLog() {
     
     try {
       const res = await axios.get(
-        `http://10.208.23.139:8520/ldap/logs/?offset=${offsetRef.current}&limit=${limit}`
+        `http://paramrudra.pune.cdac.in:8520/ldap/logs/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
       console.log(offsetRef.current)

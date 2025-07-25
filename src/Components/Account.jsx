@@ -29,7 +29,7 @@ const Account= ()=>{
   // const base_url=`http://10.208.34.9:9000`   //Shrestha Ip Address
   // const base_url = 'http://10.208.22.180:8520';
   
-  const base_url = 'http://10.208.23.139:8520';
+  const base_url = 'http://paramrudra.pune.cdac.in:8520';
   const navigate =useNavigate();
 
   const fetchActiveAccount = () => {
@@ -120,7 +120,7 @@ const Account= ()=>{
         type: selectedOption,
       };
   
-      const response = await fetch('http://10.208.23.139:8520/slurm/account/add/', {
+      const response = await fetch('http://paramrudra.pune.cdac.in:8520/slurm/account/add/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

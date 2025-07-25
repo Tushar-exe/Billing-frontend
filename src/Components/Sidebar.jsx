@@ -53,8 +53,8 @@ const Sidebar = () => {
           <div className="submenu">
             <NavLink to="/slurm/slurmdbd-log" className="submenu-item">Slurmdbd<br/> Logs</NavLink>
             <NavLink to="/slurm/slurmctld-log" className="submenu-item">Slurmctld<br/> Logs</NavLink>
-            <NavLink to="/slurm/info" className="submenu-item">Sinfo</NavLink>
-            <NavLink to="/slurm/partition" className="submenu-item">Partition Names</NavLink>
+            {/* <NavLink to="/slurm/info" className="submenu-item">Sinfo</NavLink>
+            <NavLink to="/slurm/partition" className="submenu-item">Partition Names</NavLink> */}
           </div>
         )}
       </div>

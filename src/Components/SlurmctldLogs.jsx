@@ -21,7 +21,7 @@ function SlurmctldLog() {
     
     try {
       const res = await axios.get(
-        `http://10.208.23.139:8520/slurm/slurmctld-log/?offset=${offsetRef.current}&limit=${limit}`
+        `http://paramrudra.pune.cdac.in:8520/slurm/slurmctld-log/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
       console.log(offsetRef.current)
