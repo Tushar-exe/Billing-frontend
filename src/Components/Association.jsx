@@ -369,12 +369,14 @@ const Association = () => {
               paginatedData.map((item, index) => (
                 <tr key={item}>
                   <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+                  <td>{item.user}</td>
+                  <td>{item.acct}</td>
                   <td>{item.qos}</td>
                   <td>{new Date(item.creation_time).toLocaleString()}</td>
                   <td>{new Date(item.mod_time).toLocaleString()}</td>
                   <td>{item.deleted === 1 ? 'Yes' : 'No'}</td>
-                  <td>{item.user}</td>
-                  <td>{item.acct}</td>
+                  
+                  
                   <td>{item.is_def}</td>
                   <td>{item.shares}</td>
                   <td>
