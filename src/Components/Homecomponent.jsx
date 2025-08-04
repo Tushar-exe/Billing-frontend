@@ -91,7 +91,8 @@ const HomeComponent = () => {
           <img className="card-img mx-auto d-block mt-3" src={test} alt="" style={{ borderRadius: '75px' }} />
           <div className="card-body">
             <h5 className="card-title text-center">LDAP </h5>
-            <p className="card-text">This is a wider card with supporting text below</p>
+            <p className="card-text">Manage user authentication and directory services for your organization.
+</p>
             <div className='button'>
               <NavLink to='/ldap/options'>
                 <Button variant="primary">Access LDAP</Button>
@@ -104,7 +105,7 @@ const HomeComponent = () => {
           <img className="card-img mx-auto d-block mt-3" src={test3} alt="" />
           <div className="card-body">
             <h5 className="card-title text-center">SLURM </h5>
-            <p className="card-text">This is a wider card with supporting text below</p>
+            <p className="card-text">Monitor and control high-performance computing jobs and resources.</p>
             <div className='button'>
               <NavLink to='/slurm/options'>
                 <Button variant="primary">Access SLURM</Button>
@@ -117,7 +118,7 @@ const HomeComponent = () => {
           <img className="card-img mx-auto d-block mt-3" src={test2} alt="" />
           <div className="card-body">
             <h5 className="card-title text-center">BILLING</h5>
-            <p className="card-text">This is a wider card with supporting text below</p>
+            <p className="card-text">View and manage billing information, usage, and invoices.</p>
             <div className='button'>
               <NavLink to='/billing'>
                 <Button variant="primary">Access BILLING</Button>
@@ -136,4 +137,9 @@ const HomeComponent = () => {
 export default HomeComponent;
 
 
-
+/*
+Card descriptions:
+- LDAP: Manage user authentication and directory services for your organization.
+- SLURM: Monitor and control high-performance computing jobs and resources.
+- BILLING: View and manage billing information, usage, and invoices.
+*/

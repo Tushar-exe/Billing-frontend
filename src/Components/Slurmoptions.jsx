@@ -26,8 +26,7 @@ const Slurmoptions = () => {
               <Card.Title>USER DETAILS</Card.Title>
               </div>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+View and manage all users registered in the Slurm system, including their roles, usage, and status.
               </Card.Text>
               <div className='button'>
               <NavLink to='/users_list'>
@@ -46,8 +45,7 @@ const Slurmoptions = () => {
               <Card.Title>ACCOUNT DETAILS</Card.Title>
               </div>
               <Card.Text >
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+               Access detailed information about Slurm accounts, including balances, limits, and associated users.
               </Card.Text>
                <div className='button'>
               <NavLink to='/accounts'>
@@ -66,8 +64,7 @@ const Slurmoptions = () => {
               <Card.Title>ASSOCIATION DETAILS</Card.Title>
               </div>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                Explore user-account associations, permissions, and resource allocations within the cluster.
               </Card.Text>
               <div className='button'>
               <NavLink to='/associations'>
@@ -87,8 +84,7 @@ const Slurmoptions = () => {
                 <Card.Title>QOS DETAILS</Card.Title>
                 </div>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                 Review Quality of Service (QOS) configurations, priorities, and limits for workload management.
                 </Card.Text>
               <div className='button'>
               <NavLink to='/qos'>
@@ -107,8 +103,7 @@ const Slurmoptions = () => {
                 <Card.Title>Slurmdbd LOGS</Card.Title>
                 </div>
                 <Card.Text >
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  Monitor and analyze Slurm database daemon logs for auditing and troubleshooting purposes.
                 </Card.Text>
               <div className='button'>
               <NavLink to='/slurm/slurmdbd-log'>
@@ -127,8 +122,8 @@ const Slurmoptions = () => {
                 <Card.Title>Slurmctld LOGS</Card.Title>
                 </div>
                 <Card.Text >
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  Inspect Slurm controller logs to track job scheduling, errors, and system events.<br />
+                  <br/>
                 </Card.Text>
               <div className='button'>
               <NavLink to='/slurm/slurmctld-log'>

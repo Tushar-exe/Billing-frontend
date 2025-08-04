@@ -26,8 +26,9 @@ const Ldapoptions=()=>{
               <Card.Title>ADD NEW USER TO LDAP</Card.Title>
               </div>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's contentewd.
+                Register a new user in the LDAP directory.
+                Fill out the required details to grant access.<br/>
+                <br/>
               </Card.Text>
               <div className='button'>
               <NavLink to='/ldap'>
@@ -46,8 +47,7 @@ const Ldapoptions=()=>{
               <Card.Title>LDAP USERS DETAILS</Card.Title>
               </div>
               <Card.Text >
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                Browse and manage existing LDAP users. Update user information or review account status.
               </Card.Text>
                <div className='button'>
               <NavLink to='/ldap_update'>
@@ -66,8 +66,7 @@ const Ldapoptions=()=>{
                 <Card.Title>SLAPD RELATED LOGS</Card.Title>
                 </div>
                 <Card.Text >
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  Access and review SLAPD server logs for monitoring and troubleshooting LDAP operations.
                 </Card.Text>
               <div className='button'>
               <NavLink to='/ldap/logs'>
@@ -85,3 +84,15 @@ const Ldapoptions=()=>{
 };
 
 export default Ldapoptions;
+/*
+Card.Text replacements:
+
+1. ADD NEW USER TO LDAP:
+  "Register a new user in the LDAP directory. Fill out the required details to grant access."
+
+2. LDAP USERS DETAILS:
+  "Browse and manage existing LDAP users. Update user information or review account status."
+
+3. SLAPD RELATED LOGS:
+  "Access and review SLAPD server logs for monitoring and troubleshooting LDAP operations."
+*/

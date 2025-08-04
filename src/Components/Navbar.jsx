@@ -1,11 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom';
 import '../Custom_css/Navbar.css'
+import { useAuth } from '../AuthContext';
+
 const Navbar = () => {
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <nav className="navbar-fixed border-bottom px-3 py-2 navbar navbar-light bg-primary navbar-expand-lg ">
       <div className="container-fluid">
-                <button
+        <button
           className="navbar-toggler ms-auto"
           type="button"
           data-bs-toggle="collapse"
@@ -31,6 +41,11 @@ const Navbar = () => {
               <Link className="nav-link fs-5 text-white" to="/billing">Billing</Link>
             </li>
           </ul>
+          {isAuthenticated && (
+            <button className="btn btn-danger ms-auto" style={{marginLeft: 'auto'}} onClick={handleLogout}>
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </nav>
