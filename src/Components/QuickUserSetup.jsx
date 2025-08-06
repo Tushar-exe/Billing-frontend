@@ -8,7 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-
+import check1 from '../Assets/check1.gif';
 const QuickUserSetup = () => {
 
     // Ldap states
@@ -17,7 +17,7 @@ const QuickUserSetup = () => {
       const navigate = useNavigate();
       // const base_url = `http://paramrudra.pune.cdac.in:8520`;
         const base_url = process.env.REACT_APP_BACKEND_URL;
-
+      const [showSuccess,setShowSuccess] = useState(false);
       const initialValues = {
         displayName: '', userName: '', userEmail: '', organization: '', gender: '',
         mob_no: '', institute: '', dept: '', desg: '', domain: '', sub_domain: '', app: '',
@@ -165,7 +165,13 @@ const QuickUserSetup = () => {
           if (result.message === 'User already exists in LDAP') {
                       toast.warning('User already exists in LDAP');
           } else if (result.message === 'User added successfully to LDAP') {
-            setStep(2);
+              setShowSuccess(true);
+              setMessage("User added successfully to LDAP!")
+              setTimeout(function() {
+                setShowSuccess(false);
+                setStep(2);
+                setMessage('');
+              }, 3000);            
                       toast.success('User created successfully in LDAP');
           } else {
                       toast.error('Error occurred in adding user in LDAP');
@@ -190,8 +196,8 @@ const QuickUserSetup = () => {
       };
 
     const [step, setStep] = useState(1);
-
-    const steps = ['LDAP', 'SLURM Account', 'QOS', 'Disk Quota'];
+    const [message,setMessage] = useState('');
+    const steps = ['LDAP', 'SLURM Account', 'QOS'];
 
     // Removed unused nextStep and prevStep functions as navigation buttons are no longer present
     // SLURM USERFORM.jsx
@@ -253,7 +259,14 @@ const QuickUserSetup = () => {
           if (response.ok) {
                       toast.success('User added successfully in SLURM');
             console.log("Server response:", result);
-            setStep(3);
+            setShowSuccess(true);
+              setMessage("User successfully added to SLURM!")
+              setTimeout(function() {
+                setShowSuccess(false);
+                setStep(3);
+                setMessage('');
+              }, 3000);
+            // setStep(3);
             // navigate('/users_list'); 
           } else {
                       toast.error('Error occurred while adding user in SLURM');
@@ -262,6 +275,8 @@ const QuickUserSetup = () => {
           }
       
         } catch (error) {
+          setShowSuccess(false);
+          setMessage("");
           console.error('Error submitting form:', error);
     
         }
@@ -329,7 +344,15 @@ const QuickUserSetup = () => {
                 if (response.ok) {
                               toast.success('User added successfully in SLURM');
                     console.log("Server response:", result);
-                    setStep(4);
+                     setShowSuccess(true);
+              setMessage("QOS assigned successfully")
+              setTimeout(function() {
+                setShowSuccess(false);
+                setStep(4);
+                setMessage('');
+                navigate('/users_list');
+              }, 3000);
+                    // setStep(4);
                     // navigate('/users_list');
                 } else {
                               toast.error('Error occurred while adding user in SLURM');
@@ -346,6 +369,12 @@ const QuickUserSetup = () => {
 
     return (
         <div className="container mt-5">
+          {showSuccess && (
+            <div className="alert alert-success text-center" role="alert" style={{ position: 'fixed', top: '30%', left: '50%', transform: 'translateX(-50%)', zIndex: 9999, width: '80%', maxWidth: '400px' }}>
+              <h3>{message}</h3>
+              <img src={check1} alt=""/>
+            </div>
+          )}
             <div className="text-center mb-4">
                 <h3>Quick User Setup</h3>
             </div>
@@ -700,7 +729,7 @@ const QuickUserSetup = () => {
                 </div>
             )}
 
-            {step === 4 && (
+            {/* {step === 4 && (
                 <div className="row">
                 <div className="col-md-10 px-0">
                     <h4>Step 4: Disk Quota</h4>
@@ -712,7 +741,7 @@ const QuickUserSetup = () => {
                     </form>
                 </div>
                 </div>
-            )}
+            )} */}
 
             {/* Navigation Buttons */}
             {/* Navigation Buttons removed as per user request */}
