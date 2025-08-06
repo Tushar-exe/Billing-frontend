@@ -122,7 +122,7 @@ const Account= ()=>{
         type: selectedOption,
       };
   
-      const response = await fetch('http://paramrudra.pune.cdac.in:8520/slurm/account/add/', {
+      const response = await fetch(`${base_url}/slurm/account/add/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

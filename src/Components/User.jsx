@@ -498,7 +498,7 @@ const User = () => {
   const [deletinguser,setDeletinguser] = useState(null)
   const itemsPerPage = 10;
   const navigate = useNavigate();
-  const base_url = 'http://paramrudra.pune.cdac.in:8520';
+  const base_url = process.env.REACT_APP_BACKEND_URL;;
 
   useEffect(() => {
     setLoading(true);

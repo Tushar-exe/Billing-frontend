@@ -352,24 +352,22 @@ const QuickUserSetup = () => {
 
 
             {/* Step Progress Bar */}
-            <div className="step-progress d-flex align-items-center justify-content-between my-4">
+            <div className="step-progress d-flex align-items-center justify-content-between my-4" style={{ background: '#f8f9fa', borderRadius: 8, padding: '16px 12px' }}>
                 {steps.map((label, index) => {
                     const stepNumber = index + 1;
                     const isActive = step === stepNumber;
                     const isCompleted = step > stepNumber;
-
-
                     return (
                         <div key={index} className="d-flex align-items-center flex-grow-1">
                             <div
-                                className={`step-circle text-center rounded-circle me-2 ${isActive ? 'bg-primary text-white' : isCompleted ? 'bg-primary text-white' : 'bg-primary text-white'}`}
-                                style={{ width: '40px', height: '40px', lineHeight: '40px' }}
+                                className={`step-circle text-center rounded-circle me-2 ${isActive ? 'bg-primary text-white shadow' : isCompleted ? 'bg-success text-white shadow' : 'bg-light text-secondary border'}`}
+                                style={{ width: '40px', height: '40px', lineHeight: '40px', fontWeight: 600, fontSize: 20, border: isActive ? '2px solid #0d6efd' : isCompleted ? '2px solid #198754' : '2px solid #dee2e6', transition: 'all 0.2s' }}
                             >
-                                {stepNumber}
+                                {isCompleted ? <span style={{ color: 'white', fontSize: 22, verticalAlign: 'middle' }}>&#10003;</span> : stepNumber}
                             </div>
-                            <div className="me-2">{label}</div>
+                            <div className="me-2" style={{ fontWeight: isActive ? 600 : 400, color: isActive ? '#0d6efd' : isCompleted ? '#198754' : '#6c757d' }}>{label}</div>
                             {index !== steps.length - 1 && (
-                                <div className={`flex-grow-1 step-line ${isCompleted ? 'bg-primary' : 'bg-white'}`} style={{ height: '4px' }}></div>
+                                <div className={`flex-grow-1 step-line ${isCompleted ? 'bg-success' : isActive ? 'bg-primary' : 'bg-secondary'}`} style={{ height: '4px', borderRadius: 2, opacity: 0.5 }}></div>
                             )}
                         </div>
                     );
@@ -380,215 +378,197 @@ const QuickUserSetup = () => {
             {step === 1 && (
                 <div className="row">
                     <div className="col-12 col-md-10 px-0">
-                        
-                            <>
-                              {loading && (
-                                <div className="loading-overlay">
-                                  <div className="spinner-border text-primary" role="status">
+                        {loading && (
+                            <div className="loading-overlay">
+                                <div className="spinner-border text-primary" role="status">
                                     <span className="visually-hidden">Processing...</span>
-                                  </div>
-                                  <div className="text-white mt-2">Processing... Please wait</div>
                                 </div>
-                              )}
-                        
-                              <div className="container mt-5 mb-5">
-                                <Formik
-                                  initialValues={initialValues}
-                                  validationSchema={validationSchema}
-                                  onSubmit={handleSubmit}
-                                >
-                                  {({ values, setValues }) => (
-                                    <>
-                                      <Form>
+                                <div className="text-white mt-2">Processing... Please wait</div>
+                            </div>
+                        )}
+                        <div className="container mt-5 mb-5">
+                            <Formik
+                                initialValues={initialValues}
+                                validationSchema={validationSchema}
+                                onSubmit={handleSubmit}
+                            >
+                                {({ values, setValues }) => (
+                                    <Form>
                                         <div className="row shadow p-4" style={{ background: '#fff', borderRadius: '8px' }}>
-                                          <h2 className="text-center mb-4">ADD USER TO LDAP</h2>
-                        
-                                          {/* LEFT COLUMN */}
-                                          <div className="col-12 col-md-6 border-end fade-in-left mb-4 mb-md-0">
-                                            <div className="mb-3">
-                                              <label>Display Name:</label>
-                                              <Field type="text" name="displayName" className="form-control" />
-                                              <ErrorMessage name="displayName" component="div" className="text-danger" />
+                                            <h2 className="text-center mb-4">ADD USER TO LDAP</h2>
+                                            <div className="col-12 col-md-6 border-end fade-in-left mb-4 mb-md-0">
+                                                <div className="mb-3">
+                                                    <label>Display Name:</label>
+                                                    <Field type="text" name="displayName" className="form-control" />
+                                                    <ErrorMessage name="displayName" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>User Name:</label>
+                                                    <Field type="text" name="userName" className="form-control" />
+                                                    <ErrorMessage name="userName" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Email Id:</label>
+                                                    <Field type="email" name="userEmail" className="form-control" />
+                                                    <ErrorMessage name="userEmail" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Organization:</label>
+                                                    <Field type="text" name="organization" className="form-control" />
+                                                    <ErrorMessage name="organization" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Gender:</label><br />
+                                                    <label><Field type="radio" name="gender" value="male" /> Male</label>
+                                                    <label className="ms-2"><Field type="radio" name="gender" value="female" /> Female</label>
+                                                    <label className="ms-2"><Field type="radio" name="gender" value="other" /> Other</label>
+                                                    <ErrorMessage name="gender" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Mobile No:</label>
+                                                    <Field type="number" name="mob_no" className="form-control" />
+                                                    <ErrorMessage name="mob_no" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Institute:</label>
+                                                    <Field type="text" name="institute" className="form-control" />
+                                                    <ErrorMessage name="institute" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Department:</label>
+                                                    <Field type="text" name="dept" className="form-control" />
+                                                    <ErrorMessage name="dept" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Designation:</label>
+                                                    <Field type="text" name="desg" className="form-control" />
+                                                    <ErrorMessage name="desg" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Domain:</label>
+                                                    <Field type="text" name="domain" className="form-control" />
+                                                    <ErrorMessage name="domain" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Sub Domain:</label>
+                                                    <Field type="text" name="sub_domain" className="form-control" />
+                                                    <ErrorMessage name="sub_domain" component="div" className="text-danger" />
+                                                </div>
                                             </div>
-                                            <div className="mb-3">
-                                              <label>User Name:</label>
-                                              <Field type="text" name="userName" className="form-control" />
-                                              <ErrorMessage name="userName" component="div" className="text-danger" />
+                                            <div className="col-12 col-md-6 fade-in-right">
+                                                <div className="mb-3">
+                                                    <label>Application:</label>
+                                                    <Field type="text" name="app" className="form-control" />
+                                                    <ErrorMessage name="app" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Project Name:</label>
+                                                    <Field type="text" name="proj_name" className="form-control" />
+                                                    <ErrorMessage name="proj_name" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>PI:</label>
+                                                    <Field type="text" name="pi" className="form-control" />
+                                                    <ErrorMessage name="pi" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Amount:</label>
+                                                    <Field type="number" name="amt" className="form-control" />
+                                                    <ErrorMessage name="amt" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Funded:</label>
+                                                    <Field as="select" name="fund" className="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="free">Free</option>
+                                                        <option value="paid">Paid</option>
+                                                    </Field>
+                                                    <ErrorMessage name="fund" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>CPU Hours:</label>
+                                                    <Field type="number" name="cpu" className="form-control" />
+                                                    <ErrorMessage name="cpu" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>GPU Hours:</label>
+                                                    <Field type="number" name="gpu" className="form-control" />
+                                                    <ErrorMessage name="gpu" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Start Date:</label>
+                                                    <Field type="date" name="startDate" className="form-control" />
+                                                    <ErrorMessage name="startDate" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>End Date:</label>
+                                                    <Field type="date" name="endDate" className="form-control" />
+                                                    <ErrorMessage name="endDate" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Address:</label>
+                                                    <Field type="text" name="address" className="form-control" />
+                                                    <ErrorMessage name="address" component="div" className="text-danger" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label>Description:</label>
+                                                    <Field type="text" name="description" className="form-control" />
+                                                    <ErrorMessage name="description" component="div" className="text-danger" />
+                                                </div>
                                             </div>
-                                            <div className="mb-3">
-                                              <label>Email Id:</label>
-                                              <Field type="email" name="userEmail" className="form-control" />
-                                              <ErrorMessage name="userEmail" component="div" className="text-danger" />
+                                            <div className='d-flex flex-row justify-content-center'>
+                                                <div className="mb-4 mt-4 d-flex flex-row" >
+                                                    <br />
+                                                    <input
+                                                        ref={fileInputRef}
+                                                        type="file"
+                                                        accept=".ldif,.txt"
+                                                        className="form-control"
+                                                        onChange={(e) => parseLdifFile(e, setValues)}
+                                                        style={{ backgroundColor: 'white', maxWidth: '250px' }}
+                                                    />
+                                                </div>
+                                                <div className="mt-4">
+                                                    <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview</button>
+                                                    <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
+                                                    <button type="reset" className="btn btn-secondary ms-2 me-2" onClick={() => {
+                                                        if (fileInputRef.current) {
+                                                            fileInputRef.current.value = null;
+                                                        }
+                                                    }}>Reset</button>
+                                                </div>
                                             </div>
-                                            <div className="mb-3">
-                                              <label>Organization:</label>
-                                              <Field type="text" name="organization" className="form-control" />
-                                              <ErrorMessage name="organization" component="div" className="text-danger" />
+                                            <div className="text-center mt-2">
+                                                <p className="text-muted fs-5">
+                                                    <strong>Note:</strong> only<code>.ldif</code> files are allowed to upload.
+                                                </p>
                                             </div>
-                                            <div className="mb-3">
-                                              <label>Gender:</label><br />
-                                              <label><Field type="radio" name="gender" value="male" /> Male</label>
-                                              <label className="ms-2"><Field type="radio" name="gender" value="female" /> Female</label>
-                                              <label className="ms-2"><Field type="radio" name="gender" value="other" /> Other</label>
-                                              <ErrorMessage name="gender" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Mobile No:</label>
-                                              <Field type="number" name="mob_no" className="form-control" />
-                                              <ErrorMessage name="mob_no" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Institute:</label>
-                                              <Field type="text" name="institute" className="form-control" />
-                                              <ErrorMessage name="institute" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Department:</label>
-                                              <Field type="text" name="dept" className="form-control" />
-                                              <ErrorMessage name="dept" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Designation:</label>
-                                              <Field type="text" name="desg" className="form-control" />
-                                              <ErrorMessage name="desg" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Domain:</label>
-                                              <Field type="text" name="domain" className="form-control" />
-                                              <ErrorMessage name="domain" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Sub Domain:</label>
-                                              <Field type="text" name="sub_domain" className="form-control" />
-                                              <ErrorMessage name="sub_domain" component="div" className="text-danger" />
-                                            </div>
-                                          </div>
-                        
-                                          {/* RIGHT COLUMN */}
-                                          <div className="col-12 col-md-6 fade-in-right">
-                                            <div className="mb-3">
-                                              <label>Application:</label>
-                                              <Field type="text" name="app" className="form-control" />
-                                              <ErrorMessage name="app" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Project Name:</label>
-                                              <Field type="text" name="proj_name" className="form-control" />
-                                              <ErrorMessage name="proj_name" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>PI:</label>
-                                              <Field type="text" name="pi" className="form-control" />
-                                              <ErrorMessage name="pi" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Amount:</label>
-                                              <Field type="number" name="amt" className="form-control" />
-                                              <ErrorMessage name="amt" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Funded:</label>
-                                              <Field as="select" name="fund" className="form-control">
-                                                <option value="">Select</option>
-                                                <option value="free">Free</option>
-                                                <option value="paid">Paid</option>
-                                              </Field>
-                                              <ErrorMessage name="fund" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>CPU Hours:</label>
-                                              <Field type="number" name="cpu" className="form-control" />
-                                              <ErrorMessage name="cpu" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>GPU Hours:</label>
-                                              <Field type="number" name="gpu" className="form-control" />
-                                              <ErrorMessage name="gpu" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Start Date:</label>
-                                              <Field type="date" name="startDate" className="form-control" />
-                                              <ErrorMessage name="startDate" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>End Date:</label>
-                                              <Field type="date" name="endDate" className="form-control" />
-                                              <ErrorMessage name="endDate" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Address:</label>
-                                              <Field type="text" name="address" className="form-control" />
-                                              <ErrorMessage name="address" component="div" className="text-danger" />
-                                            </div>
-                                            <div className="mb-3">
-                                              <label>Description:</label>
-                                              <Field type="text" name="description" className="form-control" />
-                                              <ErrorMessage name="description" component="div" className="text-danger" />
-                                            </div>
-                                          </div>
-                        
-                                          {/* LDIF File Upload */}
-                                          <div className='d-flex flex-row justify-content-center'>
-                                            <div className="mb-4 mt-4 d-flex flex-row" >
-                                              {/* <label htmlFor="ldifUpload" className="form-label">Upload LDIF File To Auto Fill The Form:</label> */}
-                                              <br />
-                                              <input
-                                                ref={fileInputRef}
-                                                type="file"
-                                                accept=".ldif,.txt"
-                                                className="form-control"
-                                                onChange={(e) => parseLdifFile(e, setValues)}
-                                                style={{ backgroundColor: 'white', maxWidth: '250px' }}
-                                              />
-                                            </div>
-                                            <div className="mt-4">
-                                              <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview</button>
-                                              <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
-                                              <button type="reset" className="btn btn-secondary ms-2 me-2" onClick={() => {
-                        
-                                                if (fileInputRef.current) {
-                                                  fileInputRef.current.value = null;
-                                                }
-                                              }}>Reset</button>
-                                            </div>
-                        
-                                          </div>
-                                          <div className="text-center mt-2">
-                                            <p className="text-muted fs-5">
-                                              <strong>Note:</strong> only<code>.ldif</code> files are allowed to upload.
-                                            </p>
-                                          </div>
                                         </div>
-                        
-                                      </Form>
-                                    </>
-                                  )}
-                                </Formik>
-                              </div>
-                        
-                              {showModal && (
-                                <div className="modal show fade d-block d-flex align-items-center" tabIndex="-1" role="dialog">
-                                  <div className="modal-dialog custom-modal" role="document">
+                                    </Form>
+                                )}
+                            </Formik>
+                        </div>
+                        {showModal && (
+                            <div className="modal show fade d-block d-flex align-items-center" tabIndex="-1" role="dialog">
+                                <div className="modal-dialog custom-modal" role="document">
                                     <div className="modal-content custom-content">
-                                      <div className="modal-header d-block text-center">
-                                        <h5 className="modal-title w-100">Form Preview</h5>
-                                        <button type="button" className="btn-close position-absolute top-0 end-0 mt-4 me-2" onClick={closeModal}></button>
-                                      </div>
-                                      <div className="modal-body">
-                                        {Object.entries(previewValues).map(([key, value]) => (
-                                          <p key={key}><strong>{key.replace(/_/g, ' ')}:</strong> {value}</p>
-                                        ))}
-                                      </div>
-                                      <div className="modal-footer">
-                                        <button type="button" className="btn btn-danger" onClick={closeModal}>Close</button>
-                                      </div>
+                                        <div className="modal-header d-block text-center">
+                                            <h5 className="modal-title w-100">Form Preview</h5>
+                                            <button type="button" className="btn-close position-absolute top-0 end-0 mt-4 me-2" onClick={closeModal}></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            {Object.entries(previewValues).map(([key, value]) => (
+                                                <p key={key}><strong>{key.replace(/_/g, ' ')}:</strong> {value}</p>
+                                            ))}
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-danger" onClick={closeModal}>Close</button>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
-                              )}
-                              <ToastContainer />
-                            </>
-                          
+                            </div>
+                        )}
+                        <ToastContainer />
                     </div>
                 </div>
             )}

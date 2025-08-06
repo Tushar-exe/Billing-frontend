@@ -135,11 +135,3 @@ const HomeComponent = () => {
 };
 
 export default HomeComponent;
-
-
-/*
-Card descriptions:
-- LDAP: Manage user authentication and directory services for your organization.
-- SLURM: Monitor and control high-performance computing jobs and resources.
-- BILLING: View and manage billing information, usage, and invoices.
-*/

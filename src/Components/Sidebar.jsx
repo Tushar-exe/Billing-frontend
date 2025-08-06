@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div className="custom-sidebar ">
         <div className="menu-section">
-        <NavLink to="/"style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to="/home"style={{ textDecoration: "none", color: "inherit" }}>
             <div className="menu-title">
                  <i className="bi bi-person-vcard-fill me-1"></i> HOME
             </div>

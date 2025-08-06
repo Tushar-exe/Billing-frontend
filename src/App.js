@@ -29,6 +29,7 @@ import GenerateBill from './Components/GenerateBill';
 import LoginComponent from './Components/LoginComponent';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './ProtectedRoute';
+import { LoginPage } from './Components/LoginPage';
 
 function App() {
   return (
@@ -42,8 +43,8 @@ function App() {
           <div className="container flex-grow-1">
             <Sidebar/>
           <Routes>
-            <Route path="/login" element={<LoginComponent />} />
-            <Route path="/" element={<HomeComponent />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/home" element={<ProtectedRoute><HomeComponent /></ProtectedRoute>} />
             <Route path="/associations" element={<ProtectedRoute><Association /></ProtectedRoute>} />
             <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
             <Route path="/users_list" element={<ProtectedRoute><User /></ProtectedRoute>} />

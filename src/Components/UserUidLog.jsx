@@ -8,9 +8,10 @@ function UserUIDLog() {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const base_url = process.env.REACT_APP_BACKEND_URL;
     useEffect(() => {
         axios
-            .get("http://paramrudra.pune.cdac.in:8520/ldap/system-users/")
+            .get(`${base_url}/ldap/system-users/`)
             .then((res) => {
                 setUserData(res.data);
                 setLoading(false);

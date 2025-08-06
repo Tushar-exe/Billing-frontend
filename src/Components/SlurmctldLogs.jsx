@@ -14,6 +14,8 @@ function SlurmctldLog() {
   const [error, setError] = useState(null);
   const offsetRef = useRef(0);
   const navigate = useNavigate();
+  const base_url = process.env.REACT_APP_BACKEND_URL;
+
   const fetchLogs = async () => {
     
     if (loading) return;
@@ -21,7 +23,7 @@ function SlurmctldLog() {
     
     try {
       const res = await axios.get(
-        `http://paramrudra.pune.cdac.in:8520/slurm/slurmctld-log/?offset=${offsetRef.current}&limit=${limit}`
+        `${base_url}/slurm/slurmctld-log/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
       console.log(offsetRef.current)

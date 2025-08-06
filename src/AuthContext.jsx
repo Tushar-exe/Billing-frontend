@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 const base_url = process.env.REACT_APP_BASE_URL;
@@ -9,9 +10,14 @@ export const AuthProvider = ({ children }) => {
     // This checks if 'isAuthenticated' exists in localStorage and returns true or false
   });
 
+
   const login = () => {    
-    localStorage.setItem('isAuthenticated', true);
-    setIsAuthenticated(true);
+
+
+      console.log("Login successful:");
+      localStorage.setItem('isAuthenticated', true);
+      setIsAuthenticated(true);
+
 
     // axios.get(`${base_url}/login`) 
     //   .then(response => {

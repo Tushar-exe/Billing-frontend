@@ -9,9 +9,10 @@ function UserLdiff() {
     const [ldifText, setLdifText] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const base_url = process.env.REACT_APP_BACKEND_URL;
 
     useEffect(() => {
-        axios.get("http://paramrudra.pune.cdac.in:8520/ldap/ldif-data")
+        axios.get(`${base_url}/ldap/ldif-data`)
             .then((res) => {
                 setLdifText(res.data.user_ldif);  // raw string from backend
                 setLoading(false);

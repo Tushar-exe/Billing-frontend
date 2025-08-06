@@ -16,13 +16,14 @@ function SlurmdbdLog() {
   const offsetRef = useRef(0);
   const navigate = useNavigate();
   const fetchLogs = async () => {
-    
+  const base_url = process.env.REACT_APP_BACKEND_URL;
+  
     if (loading) return;
     setLoading(true);
     
     try {
       const res = await axios.get(
-        `http://paramrudra.pune.cdac.in:8520/slurm/slurmdbd-log/?offset=${offsetRef.current}&limit=${limit}`
+        `${base_url}/slurm/slurmdbd-log/?offset=${offsetRef.current}&limit=${limit}`
       );
       const newLogs = res.data.entries || [];
       console.log(offsetRef.current)
