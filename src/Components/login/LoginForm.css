@@ -166,6 +166,7 @@
   border: none !important;
   cursor: pointer !important;
   transition: background-color 0.2s !important;
+  height: 40px;
 }
 
 .btn-primary:hover {

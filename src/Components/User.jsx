@@ -718,6 +718,7 @@ const User = () => {
                 <td>{new Date(item.mod_time).toLocaleString()}</td>
                 <td>{item.deleted ? 'Yes' : 'No'}</td>
                 <td>
+                  <div className='d-flex flex-row'>
                   <button 
                     className="btn btn-sm btn-danger me-1"
                     onClick={()=>handleDelete(item)}
@@ -732,6 +733,7 @@ const User = () => {
                   >
                     Details
                   </button>
+                  </div>
                 </td>
               </tr>
             ))}

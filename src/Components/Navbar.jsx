@@ -12,6 +12,9 @@ const Navbar = () => {
     logout();
     navigate('/login');
   };
+  const handleLogin = ()=>{
+    navigate('/login');
+  }
 
   return (
     <nav className="navbar-fixed border-bottom p-2 navbar navbar-light bg-primary navbar-expand-lg ">
@@ -48,11 +51,13 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {isAuthenticated && (
+          {isAuthenticated ? (
             <button className="btn btn-danger ms-auto" onClick={handleLogout}>
               Logout
             </button>
-          )}
+          ):(<button className="btn btn-success ms-auto" onClick={handleLogin}>
+              Login
+            </button>)}
         </div>
 
       </div>

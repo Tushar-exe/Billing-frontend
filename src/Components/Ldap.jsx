@@ -345,10 +345,10 @@ const Ldap = () => {
                         style={{ backgroundColor: 'white', maxWidth: '250px' }}
                       />
                     </div>
-                    <div className="mt-4">
-                      <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview</button>
-                      <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
-                      <button type="reset" className="btn btn-secondary ms-2 me-2" onClick={() => {
+                    <div className="mt-4 d-flex flex-row">
+                      <button type="button" className="btn btn-primary ms-2 me-2 p-0" onClick={() => handlePreview(values)}>Preview</button>
+                      <button type="submit" className="btn btn-danger ms-2 me-2" style={{height:'40px'}}>Submit</button>
+                      <button type="reset" className="btn btn-secondary ms-2 me-2" style={{height:'40px'}} onClick={() => {
 
                         if (fileInputRef.current) {
                           fileInputRef.current.value = null;
@@ -371,7 +371,7 @@ const Ldap = () => {
 <div className='pb-2 pt-2 mt-2'>
   <button
     className='btn btn-primary btn-sm d-inline-block'
-    style={{ fontSize: '12px', padding: '4px 10px' }}
+    style={{ position:'absolute',left:'50%' ,fontSize: '12px', padding: '4px 10px' }}
     onClick={() => navigate('/ldap/options')}
   >
     BACK

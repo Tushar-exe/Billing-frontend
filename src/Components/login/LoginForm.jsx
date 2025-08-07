@@ -64,6 +64,8 @@ const LoginForm = () => {
     <div className="login-container">
       <div className="login-bg"></div>
       <div className="login-wrapper">
+            <div className="animated-container">
+
         <div className="login-card">
           <div className="login-header">
             <div className="login-icon">
@@ -113,7 +115,7 @@ const LoginForm = () => {
               </div>
             </div>
 
-            <div className="form-footer">
+            {/* <div className="form-footer">
               <div className="remember-me">
                 <input
                   type="checkbox"
@@ -124,7 +126,7 @@ const LoginForm = () => {
                 <label htmlFor="remember">Remember me</label>
               </div>
               <button type="button" className="link-button">Forgot password?</button>
-            </div>
+            </div> */}
 
             <button type="submit" className="btn-primary">
               Sign In
@@ -132,15 +134,17 @@ const LoginForm = () => {
             </button>
           </form>
 
-          <div className="login-footer">
+          {/* <div className="login-footer">
             <p>
               Don't have an account?{" "}
               <button type="button" className="link-button">Contact Administrator</button>
             </p>
-          </div>
+          </div> */}
+        </div>
         </div>
       </div>
     </div>
+    
   );
 };
 

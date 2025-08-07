@@ -55,7 +55,7 @@ function AppLayout() {
           <Routes>
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/login" element={<LoginForm />} />
-            <Route path="/home" element={<ProtectedRoute><HomeComponent /></ProtectedRoute>} />
+            <Route path="/home" element={<HomeComponent />} />
             <Route path="/associations" element={<ProtectedRoute><Association /></ProtectedRoute>} />
             <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
             <Route path="/users_list" element={<ProtectedRoute><User /></ProtectedRoute>} />

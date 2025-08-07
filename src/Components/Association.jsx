@@ -380,6 +380,7 @@ const Association = () => {
                   <td>{item.is_def}</td>
                   <td>{item.shares}</td>
                   <td>
+                    <div className='d-flex flex-row'>
                     <button
                       className="btn btn-danger btn-sm me-2"
                       onClick={() => handleDelete(item.id_assoc)}
@@ -392,6 +393,7 @@ const Association = () => {
                     >
                       Details
                     </button>
+                    </div>
                   </td>
                 </tr>
               ))
