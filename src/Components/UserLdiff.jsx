@@ -4,12 +4,14 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Spinner } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import errorImage from '../Assets/image2.png';
+import { useNavigate } from "react-router-dom";
 
 function UserLdiff() {
     const [ldifText, setLdifText] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const base_url = process.env.REACT_APP_BACKEND_URL;
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get(`${base_url}/ldap/ldif-data`)
@@ -32,7 +34,7 @@ function UserLdiff() {
     };
 
     if (loading) return (
-        <div className="text-center mt-4 text-primary" style={{ top: '40%', left: '45%', position: 'absolute' }}>
+        <div className="text-center mt-4 text-primary" style={{ top: '30%', left: '45%', position: 'absolute' }}>
             <Spinner animation="border" />
             <h6>Loading User.ldif data....Please Wait</h6>
         </div>
@@ -40,16 +42,23 @@ function UserLdiff() {
 
     if (error) return (
         <div className="text-center mt-5" style={{ animation: 'fadeIn 1.5s ease-in-out' }}>
-            <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+            <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px',marginTop:'15px' }} />
             <h4 className="text-danger">Oops! Something went wrong...</h4>
             <p className="text-muted">An unexpected error occurred while fetching data.</p>
         </div>
     );
-
     return (
         <div className="container">
+            <div className='pb-2 pt-2'>
+        <button className='btn btn-primary' style={{position:'absolute',right:'82%',top:'15%'}} onClick={()=>{navigate(-1)}}>
+        BACK
+      </button>
+      <br/>
+      </div>
+      
+            
             <div className="d-flex flex-wrap justify-content-center">
-                {/* <Card style={{ width: '60rem', height: '45rem', margin: '10px', backgroundColor: '#fdfdfd' }}> */}
+                    {/* <Card style={{ width: '60rem', height: '45rem', margin: '10px', backgroundColor: '#fdfdfd' }}> */}
                 <Card style={{ width: '60rem',backgroundColor: '#fdfdfd' }}>
                     <Card.Header className="d-flex justify-content-between bg-dark text-white">
                         <h5>User.ldif FILE DATA</h5>
@@ -62,6 +71,8 @@ function UserLdiff() {
                     </Card.Body>
                 </Card>
             </div>
+            <br/>
+            <br/>
             <ToastContainer />
         </div>
     );

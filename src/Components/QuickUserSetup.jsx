@@ -382,6 +382,7 @@ const QuickUserSetup = () => {
 
             {/* Step Progress Bar */}
             <div className="step-progress d-flex align-items-center justify-content-between my-4" style={{ background: '#f8f9fa', borderRadius: 8, padding: '16px 12px' }}>
+                
                 {steps.map((label, index) => {
                     const stepNumber = index + 1;
                     const isActive = step === stepNumber;
@@ -557,7 +558,7 @@ const QuickUserSetup = () => {
                                                         style={{ backgroundColor: 'white', maxWidth: '250px' }}
                                                     />
                                                 </div>
-                                                <div className="mt-4">
+                                                {/* <div className="mt-4">
                                                     <button type="button" className="btn btn-primary ms-2 me-2" onClick={() => handlePreview(values)}>Preview</button>
                                                     <button type="submit" className="btn btn-danger ms-2 me-2">Submit</button>
                                                     <button type="reset" className="btn btn-secondary ms-2 me-2" onClick={() => {
@@ -565,7 +566,17 @@ const QuickUserSetup = () => {
                                                             fileInputRef.current.value = null;
                                                         }
                                                     }}>Reset</button>
-                                                </div>
+                                                </div> */}
+                                                <div className="mt-4 d-flex flex-row">
+                      <button type="button" className="btn btn-primary ms-2 me-2 p-0" onClick={() => handlePreview(values)}>Preview</button>
+                      <button type="submit" className="btn btn-danger ms-2 me-2" style={{height:'40px'}}>Submit</button>
+                      <button type="reset" className="btn btn-secondary ms-2 me-2" style={{height:'40px'}} onClick={() => {
+
+                        if (fileInputRef.current) {
+                          fileInputRef.current.value = null;
+                        }
+                      }}>Reset</button>
+                    </div>
                                             </div>
                                             <div className="text-center mt-2">
                                                 <p className="text-muted fs-5">

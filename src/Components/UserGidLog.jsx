@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Spinner, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import errorImage from '../Assets/image2.png';
+import { useNavigate } from "react-router-dom";
 
 function UserGIDLog() {
     const [userData, setUserData] = useState(null);
@@ -28,23 +29,31 @@ function UserGIDLog() {
         if (log.includes("INFO")) return <span className="text-info">{log}</span>;
         return <span>{log}</span>;
     };
+    const navigate = useNavigate();
     const copyLogs = () => {
         const text = userData.entries.join("\n");
         navigator.clipboard.writeText(text);
         // alert("Logs copied to clipboard!");
         toast.success('Data copied to clipboard!')
     };
-if (loading) return <div className="text-center mt-4 text-primary " style={{top:'40%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Gid Data....Please Wait</h6></div>;
+if (loading) return <div className="text-center mt-4 text-primary " style={{top:'30%',left:'45%',position:'absolute'}}><Spinner animation="border" /><h6>Loading Gid Data....Please Wait</h6></div>;
 
 
     if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
-          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px',marginTop:'15px' }} />
           <h4 className="text-danger">Oops! Something went wrong...</h4>
           <p className="text-muted">An unexpected error occurred while fetching data.</p>
         </div>
 
     return (
         <div className="container mt-5" style={{width:'95%'}}>
+            <div className='pb-2 pt-2'>
+        <button className='btn btn-primary' style={{position:'absolute',right:'87%',top:'15%'}} onClick={()=>{navigate(-1)}}>
+        BACK
+      </button>
+      <br/>
+      <br/>
+      </div>
             <Card>
                 <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
                     <strong>Gid Data</strong>

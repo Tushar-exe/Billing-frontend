@@ -74,13 +74,21 @@ function LdapLog() {
   //   return <p className="text-danger text-center mt-4">Error loading logs.</p>;
 
       if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
-          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px' }} />
+          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px',marginTop:'15px' }} />
           <h4 className="text-danger">Oops! Something went wrong...</h4>
           <p className="text-muted">An unexpected error occurred while fetching data.</p>
         </div>
 
   return (
     <div className="container mt-5" style={{width:'95%'}}>
+      <div className='pb-2 pt-2'>
+              <button className='btn btn-primary' style={{position:'absolute',right:'87%',top:'15%'}} onClick={()=>{navigate(-1)}}>
+              BACK
+            </button>
+            <br/>
+            <br/>
+            </div>
+                  
  
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">

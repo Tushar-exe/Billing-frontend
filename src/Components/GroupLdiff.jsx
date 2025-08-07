@@ -4,6 +4,7 @@ import { Button, Card, Spinner } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import errorImage from '../Assets/image2.png';
 import '../App.css';
+import { useNavigate } from "react-router-dom";
 
 
 function GroupLdiff() {
@@ -12,7 +13,7 @@ function GroupLdiff() {
     const [error, setError] = useState(null);
 
     const base_url = process.env.REACT_APP_BACKEND_URL;
-
+    const navigate = useNavigate();
     useEffect(() => {
         axios.get(`${base_url}/ldap/ldif-data`)
             .then((res) => {
@@ -34,7 +35,7 @@ function GroupLdiff() {
     };
 
     if (loading) return (
-        <div className="text-center mt-4 text-primary" style={{ top: '40%', left: '45%', position: 'absolute' }}>
+        <div className="text-center mt-4 text-primary" style={{ top: '30%', left: '45%', position: 'absolute' }}>
             <Spinner animation="border" />
             <h6>Loading Group.ldif data....Please Wait</h6>
         </div>
@@ -50,6 +51,14 @@ function GroupLdiff() {
 
     return (
         <div className="container">
+            <div className='pb-2 pt-2'>
+                    <button className='btn btn-primary' style={{position:'absolute',right:'82%',top:'15%'}} onClick={()=>{navigate(-1)}}>
+                    BACK
+                  </button>
+                  <br/>
+                  
+                  </div>
+                    
             <div className="d-flex flex-wrap justify-content-center">
                 {/* <Card style={{ width: '60rem', height: '45rem', margin: '10px', backgroundColor: '#fdfdfd' }}> */}
                 <Card style={{ width: '60rem',backgroundColor: '#fdfdfd' }}>
@@ -64,6 +73,7 @@ function GroupLdiff() {
                     </Card.Body>
                 </Card>
             </div>
+            <br/><br/>
             <ToastContainer />
         </div>
     );
