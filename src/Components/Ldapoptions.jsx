@@ -12,6 +12,8 @@ import { NavLink } from 'react-router-dom';
 
 const Ldapoptions=()=>{
     return(
+      <>
+      <br />
  <div className="container mt-5 animated-container">
       <Row className="g-4">
         <Col md={4}>
@@ -23,12 +25,11 @@ const Ldapoptions=()=>{
 
             <Card.Body>
               <div className='text'>
-              <Card.Title>ADD NEW USER TO LDAP</Card.Title>
+              <Card.Title>ADD USER TO LDAP</Card.Title>
               </div>
               <Card.Text>
                 Register a new user in the LDAP directory.
-                Fill out the required details to grant access.<br/>
-                <br/>
+                Fill out the required details to grant access.
               </Card.Text>
               <div className='button'>
               <NavLink to='/ldap'>
@@ -75,11 +76,14 @@ const Ldapoptions=()=>{
               </div>
               </Card.Body>
             </Card>
+            <br />
+            <br />
 
           </Col>
 
       </Row>
     </div>
+    </>
   );
 };
 

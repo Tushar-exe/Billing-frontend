@@ -195,7 +195,7 @@ const Ldap = () => {
         </div>
       )}
 
-      <div className="container mt-5 mb-5 col-11">
+      <div className="container mt-5 mb-5 col-11 ">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -368,12 +368,15 @@ const Ldap = () => {
             </>
           )}
         </Formik>
-        <div className='pb-2 pt-2 mt-2'>
-        <button className='btn btn-primary' style={{position:'absolute',left:'50%'}} onClick={()=>{navigate('/ldap/options')}}>
-        BACK
-      </button>
-      <br/>
-      </div>
+<div className='pb-2 pt-2 mt-2'>
+  <button
+    className='btn btn-primary btn-sm d-inline-block'
+    style={{ fontSize: '12px', padding: '4px 10px' }}
+    onClick={() => navigate('/ldap/options')}
+  >
+    BACK
+  </button>
+</div>
       </div>
 
       {showModal && (

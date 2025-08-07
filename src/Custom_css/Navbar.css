@@ -1,9 +1,12 @@
 .navbar-fixed {
   position: fixed;
-  top: 70px; /* Adjust this to match header height */
+  top: 0px;
   left: 0;
   width: 100%;
   z-index: 1040;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 @media (max-width: 991.98px) {
@@ -17,4 +20,40 @@
     padding: 0.5rem 0;
   }
 }
- 
+  
+/* .navbar-fixed {
+  position: fixed;
+  top: 70px; 
+  left: 0;
+  width: 100%;
+  z-index: 1040;
+  background-color: #0b559e; 
+}*/
+
+/* Ensure centered links inside navbar-collapse */
+/*.navbar-collapse {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* spacing between nav items and logout 
+}
+*/
+/* Responsive tweaks 
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #0b559e;
+    padding: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .btn.btn-danger {
+    align-self: flex-end;
+  }
+} */

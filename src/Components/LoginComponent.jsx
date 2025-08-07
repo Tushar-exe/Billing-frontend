@@ -25,26 +25,26 @@ const LoginComponent = () => {
             setLoading(false);
             navigate('/home');
         }
-        if (username !== '' && password !== '') {
-            axios.post(`${base_url}/auth/login/`, {
-            username: username,
-            password: password
-            })
-            .then(response => {
-                console.log("Login successful:", response.data);
-                toast.success("Login successful");
-                login();
-                setLoading(false);
-                navigate('/');
+    //     if(username !== '' && password !== '') {}
+    //         axios.post(`${base_url}/auth/login/`, {
+    //         username: username,
+    //         password: password
+    //         })
+    //         .then(response => {
+    //             console.log("Login successful:", response.data);
+    //             toast.success("Login successful");
+    //             login();
+    //             setLoading(false);
+    //             navigate('/home');
                 
-            })
-            .catch(error => {
-                console.error("Login failed:", error);
-                navigate('/login');
-                toast.error("Login failed. Please check your credentials."); 
-                setLoading(false);  
-            });            
-        } 
+    //         })
+    //         .catch(error => {
+    //             console.error("Login failed:", error);
+    //             navigate('/login');
+    //             toast.error("Login failed. Please check your credentials."); 
+    //             setLoading(false);  
+    //         });            
+    //     } 
     };
     
     return (

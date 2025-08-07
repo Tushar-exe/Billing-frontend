@@ -2,9 +2,56 @@
   background-color: #0d6efd;
   color: white;
   text-align: center;
-  padding: 1rem;
   width: 100%;
-  position: relative;
-  bottom: 0;
+  position: sticky !important;
+  bottom: 0 !important;
   overflow-x: hidden;
+}
+
+
+.footer {
+  background-color: #3876fdff;
+}
+
+.footer-content {
+  padding: 1rem;
+}
+
+.footer-title {
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+}
+
+.footer-subtitle {
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+}
+
+.footer-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-table {
+  color: rgb(255, 255, 255);
+  border-color: #666;
+}
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer-credit {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-credit:hover {
+  text-decoration: underline;
 }

@@ -1,0 +1,191 @@
+/* Container */
+.login-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 4rem auto !important;
+}
+.login-container {
+  position: relative;
+  padding-top: 2rem !important;
+  overflow: hidden;
+}
+
+.login-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../Assets/login-bg.avif");
+  background-position: 100%;
+  background-size: contain;
+  filter: blur(10px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.login-content {
+}
+/* Card */
+.login-card {
+  background-color: #fff !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Header */
+.login-header {
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+}
+
+.login-icon {
+  width: 64px !important;
+  height: 64px !important;
+  background: linear-gradient(to right, #0d6efd, #3d8bfd) !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 1rem !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.login-title {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  margin-bottom: 0.5rem !important;
+  color: #1f2937 !important;
+}
+
+.login-subtitle {
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Form */
+.login-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+}
+
+/* Input group */
+.form-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: normal;
+}
+
+.form-label {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #374151 !important;
+}
+
+.input-wrapper {
+  position: relative !important;
+}
+
+.input-icon {
+  position: absolute !important;
+  left: 10px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: 20px !important;
+  width: 20px !important;
+  color: #9ca3af !important;
+}
+
+.form-input {
+  width: 100% !important;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  outline: none !important;
+  transition: border-color 0.2s !important;
+}
+
+.form-input:focus {
+  border-color: #6366f1 !important;
+}
+
+/* Toggle password */
+.toggle-password {
+  position: absolute !important;
+  right: 6px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: 32px !important;
+  width: 32px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+}
+
+/* Footer actions */
+.form-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.875rem !important;
+  color: #6b7280 !important;
+}
+
+.remember-me {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+}
+
+.link-button {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 0.875rem !important;
+  color: #4f46e5 !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+}
+
+/* Primary Button */
+.btn-primary {
+  width: auto ;;
+  background-color: #0d6efd !important;
+  /* Replaces #4f46e5 */
+  color: white !important;
+  padding: 0.75rem !important;
+  border-radius: 8px !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s !important;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7 !important;
+  /* Replaces #4338ca */
+}
+
+.arrow-icon {
+  margin-left: 0.5rem !important;
+  transition: transform 0.2s ease !important;
+}
+
+.btn-primary:hover .arrow-icon {
+  transform: translateX(4px) !important;
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 1.5rem !important;
+  text-align: center !important;
+  font-size: 0.875rem !important;
+  color: #6b7280 !important;
+}

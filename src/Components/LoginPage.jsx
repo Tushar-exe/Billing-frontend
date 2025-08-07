@@ -8,7 +8,7 @@ const loginPageStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft:'-4%',
+    marginLeft:'-8%',
 };
 
 const LoginPage = () => (

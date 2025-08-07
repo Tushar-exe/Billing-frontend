@@ -88,7 +88,7 @@ const HomeComponent = () => {
       </div>
       <br></br>
 
-      <div className="d-flex flex-row justify-content-between" style={{ marginLeft: '80px' }}>
+      <div className="d-flex flex-row justify-content-evenly" style={{ marginLeft: '80px' }}>
         <div className="card m-2 text-black " style={{ width: '350px', borderRadius: '30px', cursor: 'pointer' }} onClick={() => { navigate('/ldap/options') }}>
           <img className="card-img mx-auto d-block mt-3" src={ldap_img} alt="" style={{ borderRadius: '75px' }} />
           <div className="card-body">
@@ -129,9 +129,10 @@ const HomeComponent = () => {
           </div>
 
         </div>
-
       </div>
-
+        <br />
+        <br />
+        <br />
     </>
   );
 };

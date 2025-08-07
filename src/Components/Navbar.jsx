@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Custom_css/Navbar.css'
 import { useAuth } from '../AuthContext';
-
+import Cdac_logo from '../Assets/cdac_logo.png';// adjust the path
+import proj_logo from '../Assets/proj_logo.jpg';
 const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
@@ -13,8 +14,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar-fixed border-bottom px-3 py-2 navbar navbar-light bg-primary navbar-expand-lg ">
-      <div className="container-fluid">
+    <nav className="navbar-fixed border-bottom p-2 navbar navbar-light bg-primary navbar-expand-lg ">
+      <div className="container-fluid ">
+        <div className="d-flex align-items-center">
+        <img src={Cdac_logo} alt="Logo 1" height="60" className="me-2" />
+        <img src={proj_logo} alt="Logo 1" height="60" className="me-2" />
+
+      </div>
         <button
           className="navbar-toggler ms-auto"
           type="button"
@@ -26,27 +32,29 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <li className="nav-item ">
-              <Link className="nav-link fs-5 text-white" to="/home">Home</Link>
+        <div className="collapse navbar-collapse justify-content-center position-relative" id="navbarNavDropdown">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item ms-5">
+              <Link className="nav-link fs-3  mx-2 text-white" to="/home">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-5 text-white" to="/ldap/options">Ldap</Link>
+              <Link className="nav-link fs-3  mx-2 text-white" to="/ldap/options">Ldap</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-5 text-white" to="/slurm/options">Slurm</Link>
+              <Link className="nav-link fs-3  mx-2 text-white" to="/slurm/options">Slurm</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fs-5 text-white" to="/billing">Billing</Link>
+              <Link className="nav-link fs-3  mx-2 text-white" to="/billing">Billing</Link>
             </li>
           </ul>
+
           {isAuthenticated && (
-            <button className="btn btn-danger ms-auto" style={{marginLeft: 'auto'}} onClick={handleLogout}>
+            <button className="btn btn-danger ms-auto" onClick={handleLogout}>
               Logout
             </button>
           )}
         </div>
+
       </div>
     </nav>
   );

@@ -12,6 +12,8 @@ import { NavLink } from 'react-router-dom';
 
 const Slurmoptions = () => {
   return (
+    <>
+    <br />
     <div className="container mt-5 animated-container">
       <Row className="g-4">
         <Col md={4}>
@@ -122,8 +124,7 @@ View and manage all users registered in the Slurm system, including their roles,
                 <Card.Title>Slurmctld LOGS</Card.Title>
                 </div>
                 <Card.Text >
-                  Inspect Slurm controller logs to track job scheduling, errors, and system events.<br />
-                  <br/>
+                  Inspect Slurm controller logs to track job scheduling, errors, and system events.
                 </Card.Text>
               <div className='button'>
               <NavLink to='/slurm/slurmctld-log'>
@@ -138,6 +139,9 @@ View and manage all users registered in the Slurm system, including their roles,
         </Row>
       </Row>
     </div>
+    <br />
+    <br />
+    </>
   );
 };
 
