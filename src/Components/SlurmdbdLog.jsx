@@ -16,11 +16,11 @@ function SlurmdbdLog() {
   const offsetRef = useRef(0);
   const navigate = useNavigate();
   const fetchLogs = async () => {
-  const base_url = process.env.REACT_APP_BACKEND_URL;
-  
+    const base_url = process.env.REACT_APP_BACKEND_URL;
+
     if (loading) return;
     setLoading(true);
-    
+
     try {
       const res = await axios.get(
         `${base_url}/slurm/slurmdbd-log/?offset=${offsetRef.current}&limit=${limit}`
@@ -29,7 +29,7 @@ function SlurmdbdLog() {
       console.log(offsetRef.current)
       setLogs((prev) => [...prev, ...newLogs.filter(log => !prev.includes(log))]);
       offsetRef.current += newLogs.length;
-      if(newLogs.length!==0 && offsetRef.current > 200){
+      if (newLogs.length !== 0 && offsetRef.current > 200) {
         toast.success("100 More Logs Loaded")
       }
       if (res.data.total !== undefined) {
@@ -41,7 +41,7 @@ function SlurmdbdLog() {
       console.error("Error fetching logs:", err);
       setError(err);
     } finally {
-      
+
       setLoading(false);
     }
   };
@@ -73,24 +73,24 @@ function SlurmdbdLog() {
   // if (error)
   //   return <p className="text-danger text-center mt-4">Error loading logs.</p>;
 
-      if(error) return <div className="text-center mt-5" style={{  animation: 'fadeIn 1.5s ease-in-out'}}>
-          <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px',marginTop:'15px' }} />
-          <h4 className="text-danger">Oops! Something went wrong...</h4>
-          <p className="text-muted">An unexpected error occurred while fetching data.</p>
-        </div>
+  if (error) return <div className="text-center mt-5" style={{ animation: 'fadeIn 1.5s ease-in-out' }}>
+    <img src={errorImage} alt="Error" className="img-fluid" style={{ maxWidth: '200px', marginTop: '15px' }} />
+    <h4 className="text-danger">Oops! Something went wrong...</h4>
+    <p className="text-muted">An unexpected error occurred while fetching data.</p>
+  </div>
 
   return (
-    <div className="container mt-5" style={{width:'95%'}}>
-      <div className='pb-2 pt-2'>
-        <button className='btn btn-primary' style={{position:'absolute',right:'87%',top:'15%'}} onClick={()=>{navigate('/slurm/options')}}>
-        BACK
-      </button>
-      <br/>
-      <br/>
-      </div>
+    <>
+    <div className="container mt-5" style={{ width: '95%' }}>
+
       <Card>
         <Card.Header className="bg-dark text-white d-flex justify-content-between align-items-center">
-          <strong>Slurmdbd Logs</strong>
+          <div className='pb-2 pt-2'>
+            <button className='btn btn-primary' onClick={() => { navigate('/slurm/options') }}>
+              BACK
+            </button>
+          </div>
+          <h3><strong>Slurmdbd Logs</strong></h3>
           <div className="d-flex gap-2">
             <Button variant="outline-light bg-white text-dark " size="sm" onClick={copyLogs}>
               Copy Logs
@@ -128,9 +128,12 @@ function SlurmdbdLog() {
           </div>
         </Card.Body>
       </Card>
-      
+
       <ToastContainer />
     </div>
+    <br />
+    <br />
+    </>
   );
 }
 

@@ -20,7 +20,7 @@ const LoginForm = () => {
     e.preventDefault();
     console.log("Login attempt:", { username, password, rememberMe });
     setLoading(true);
-    if (username === 'admin' && password === 'admin') {
+    if (username === 'cadmin' && password === 'cadmin@@321') {
       toast.success("Login successful");
       login();
       setLoading(false);

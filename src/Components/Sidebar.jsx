@@ -77,12 +77,12 @@ const Sidebar = () => {
         )}
       </div>
 
-
+{/* 
       <div>
         <NavLink to="/logout" className="menu-item logout">
           <i className="bi bi-box-arrow-right"></i> Logout
         </NavLink>
-      </div>
+      </div> */}
     </div>
   );
 };

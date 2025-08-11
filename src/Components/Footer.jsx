@@ -8,14 +8,16 @@ const Footer = () => {
         <div className="footer-content text-white">
           <div className="row">
             <div className="col-lg-4 col-md-12 mb-4">
-              <h5 className="footer-title">Contact Us</h5>
-              <p>
+              <h4 className="footer-title">Contact Us</h4>
+              <h5><p>
                 CDAC Innovation Park, 34/B/1, Panchawati Rd, Mansarovar, Panchawati, Pashan, Pune, Maharashtra 411008
               </p>
+              </h5>
             </div>
 
             <div className="col-lg-4 col-md-6 mb-4">
-              <h5 className="footer-subtitle">links</h5>
+              <h4 className="footer-subtitle">Quick Links</h4>
+              
               <ul className="list-unstyled mb-0">
                 <li className="mb-1">
                   <a href="/ldap/options" className="footer-link">LDAP</a>

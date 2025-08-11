@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { ToastContainer,toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const AccountWithQos = () => {
@@ -61,9 +62,12 @@ const AccountWithQos = () => {
             const result = await response.json();
 
             if (response.ok) {
-                alert('User added successfully in SLURM');
+                toast.success('Qos added successfully to the Account');
                 console.log("Server response:", result);
-                navigate('/users_list');
+                setTimeout(() => {
+                    navigate('/users_list');
+                }, 2000);
+                
             } else {
                 alert('Error occurred while adding user in SLURM');
                 console.error("Error response from server:", result);
@@ -131,6 +135,7 @@ const AccountWithQos = () => {
                         </form>
                     </div>
                 </div>
+                <ToastContainer/>
             </div>
         </>
     );

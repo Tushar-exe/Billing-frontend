@@ -1,6 +1,6 @@
 .custom-sidebar {
   top: 77px;
-  height: auto;
+  height: 47vh;
   scrollbar-width: none;
   /* bottom: 5px; */
   width: 50px; 
@@ -24,7 +24,7 @@
 .custom-sidebar:hover {
   width: 170px;
   padding: 20px 15px;
-  height:70vh;
+  height:50vh;
 }
 
 /* Sidebar brand */

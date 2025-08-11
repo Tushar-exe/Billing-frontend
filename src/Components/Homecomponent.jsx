@@ -3,6 +3,8 @@
 import React from "react";
 
 import hpc1 from '../Assets/hpc1.jpg';
+import banner_img from '../Assets/banner_img1.png';
+import banner_img2 from '../Assets/banner_img2.jpg';
 import user from '../Assets/user.jpg';
 // import test from '../Assets/test.jpg';
 import test2 from '../Assets/test2.jpg';
@@ -56,24 +58,22 @@ const HomeComponent = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active " data-bs-interval="10000">
-            <img src={hpc1} className="d-block w-100 " style={{ height: '350px' }} alt="" />
+            <img src={banner_img} className="d-block w-100 " style={{ height: '350px' }} alt="" />
             <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <p>Manage your HPC resources efficiently.</p>
             </div>
           </div>
           <div className="carousel-item" data-bs-interval="2000">
-            <img src={hpc1} className="d-block w-100" style={{ height: '350px' }} alt="..." />
+            <img src={banner_img2} className="d-block w-100" style={{ height: '350px' }} alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+              <p>Optimize your job scheduling and resource allocation.</p>
             </div>
           </div>
           <div className="carousel-item">
             <img src={hpc1} className="d-block w-100" style={{ height: '350px' }} alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <p>Monitor and manage your HPC workloads effectively.</p>
+
             </div>
           </div>
         </div>

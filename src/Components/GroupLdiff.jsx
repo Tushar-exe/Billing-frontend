@@ -51,29 +51,28 @@ function GroupLdiff() {
 
     return (
         <div className="container">
-            <div className='pb-2 pt-2'>
-                    <button className='btn btn-primary' style={{position:'absolute',right:'82%',top:'15%'}} onClick={()=>{navigate(-1)}}>
-                    BACK
-                  </button>
-                  <br/>
-                  
-                  </div>
-                    
+
+
             <div className="d-flex flex-wrap justify-content-center">
                 {/* <Card style={{ width: '60rem', height: '45rem', margin: '10px', backgroundColor: '#fdfdfd' }}> */}
-                <Card style={{ width: '60rem',backgroundColor: '#fdfdfd' }}>
+                <Card style={{ width: '60rem', backgroundColor: '#fdfdfd' }}>
                     <Card.Header className="d-flex justify-content-between bg-dark text-white">
-                        <h5>Group.ldif FILE DATA</h5>
+                        <div className='pb-2 pt-2'>
+                            <button className='btn btn-primary' onClick={() => { navigate('/slurm/options') }}>
+                                BACK
+                            </button>
+                        </div>
+                        <h3><strong>Group.ldif FILE DATA</strong></h3>
                         <Button variant="outline-light" size="sm" onClick={copyLogs}>
                             Copy Data
                         </Button>
                     </Card.Header>
                     <Card.Body style={{ overflowY: 'auto', whiteSpace: 'pre-wrap', fontFamily: 'monospace' }}>
-                        <pre style={{ fontWeight: 'bold',fontSize: '1.1rem' }}>{ldifText}</pre>
+                        <pre style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{ldifText}</pre>
                     </Card.Body>
                 </Card>
             </div>
-            <br/><br/>
+            <br /><br />
             <ToastContainer />
         </div>
     );
