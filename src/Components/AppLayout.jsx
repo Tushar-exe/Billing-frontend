@@ -37,6 +37,8 @@ import LoginComponent from '../Components/LoginComponent';
 import ProtectedRoute from '../ProtectedRoute';
 // import { LoginPage } from './Components/LoginPage';
 import LoginForm from '../Components/login/LoginForm'
+import AddQosToUser from './AddQosToUser';
+import RechargeComponent from './RechargeComponent';
 
 
 
@@ -77,6 +79,8 @@ function AppLayout() {
             <Route path="/slurm/slurmdbd-log" element={<ProtectedRoute><SlurmdbdLog /></ProtectedRoute>} />
             <Route path="/slurm/slurmctld-log" element={<ProtectedRoute><SlurmctldLog /></ProtectedRoute>} />
             <Route path="/billing" element={<ProtectedRoute><GenerateBill /></ProtectedRoute>} />
+            <Route path="/user/addqos" element={<ProtectedRoute><AddQosToUser/></ProtectedRoute>} />
+            <Route path="/user/recharge" element={<ProtectedRoute><RechargeComponent/></ProtectedRoute>}></Route>
           </Routes>
         </div>
       </div>
