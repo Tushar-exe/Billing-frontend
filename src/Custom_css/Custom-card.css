@@ -1,7 +1,7 @@
-.card-img{
-    height: 150px;
-    width: 150px;
-
+.card-img {
+  height: 150px;
+  width: 150px;
+  margin-top: -5rem !important;
 }
 
 .button {
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.text{
+.text {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +50,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -64,10 +65,11 @@
 
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 5rem !important;
+  border-radius: 3rem !important;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.11);
 }
-

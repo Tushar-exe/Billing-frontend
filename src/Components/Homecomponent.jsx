@@ -5,7 +5,6 @@ import React from "react";
 import hpc1 from '../Assets/hpc1.jpg';
 import banner_img from '../Assets/banner_img1.png';
 import banner_img2 from '../Assets/banner_img2.jpg';
-import user from '../Assets/user.jpg';
 // import test from '../Assets/test.jpg';
 import test2 from '../Assets/test2.jpg';
 import test3 from '../Assets/test3.jpg';

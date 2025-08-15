@@ -47,31 +47,17 @@ sort-arrow {
   animation: fadeIn 1.5s ease-in-out;
 }
 /* Modal Container */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Ensure the modal is on top */
-  visibility: hidden; /* Hidden by default */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+
 
 /* Modal Content */
-.modal-content {
+/* .modal-content {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   display:flex;
   width: 300px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Show the Modal when active */
 .modal.show {
@@ -115,18 +101,7 @@ sort-arrow {
 
 /* Main content styles */
 /* Main Content */
-.container {
-  margin-left: 75px; /* If you have a sidebar */
-  margin-top: 80px;  /* Adjusted for fixed header + navbar */
-  padding: 20px;
-}
-@media (max-width: 768px) {
-  .container {
-    margin-left: 0;       /* Remove sidebar space */
-    margin-top: 60px;     /* Reduce top space if navbar is smaller */
-    padding: 10px;
-  }
-}
+
 
 /* .main-content {
   margin-top: 80px; 

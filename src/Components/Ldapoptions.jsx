@@ -4,10 +4,9 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../Custom_css/Custom-card.css'
-import user_img from '../Assets/user.jpg';
-
-import account_img from '../Assets/account.jpg';
-import logs_img from '../Assets/logs.jpg';
+import user_img from '../Assets/user.png';
+import ldap_img from '../Assets/ldap_users.png';
+import logs_img from '../Assets/logs.png';
 import { NavLink } from 'react-router-dom';
 
 const Ldapoptions=()=>{
@@ -42,7 +41,7 @@ const Ldapoptions=()=>{
         <Col md={4}>
           <Card className='rounded-3 shadow'>
             <Card.Img className='card-img mx-auto d-block mt-3'
-            variant="top" src={account_img} />
+            variant="top" src={ldap_img} />
             <Card.Body>
               <div className='text'>
               <Card.Title>LDAP USERS DETAILS</Card.Title>
@@ -51,7 +50,7 @@ const Ldapoptions=()=>{
                 Browse and manage existing LDAP users. Update user information or review account status.
               </Card.Text>
                <div className='button'>
-              <NavLink to='/ldap_update'>
+              <NavLink to='/ldap/users'>
               <Button  variant="primary">View Ldap Users</Button>
               </NavLink>
               </div>

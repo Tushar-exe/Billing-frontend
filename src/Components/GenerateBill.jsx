@@ -124,7 +124,7 @@ const GenerateBill = () => {
     <>
     <br />
     <br />
-    <div className="container mt-5 animated-container" style={{ width: 'auto'}}>
+    <div className=" mt-5 animated-container" style={{ width: 'auto'}}>
       <div className="card shadow-lg p-4 mx-auto" style={{ maxWidth: '600px', height:'400px' }}>
         <h3 className="text-center mb-4 text-primary"><strong>GENERATE USER BILL</strong></h3>
         <br />

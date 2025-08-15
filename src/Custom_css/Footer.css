@@ -10,7 +10,8 @@
 
 
 .footer {
-  background-color: #3876fdff;
+  /* background-color: #3876fdff; */
+  background-color: rgb(20, 130, 214);
 }
 
 .footer-content {

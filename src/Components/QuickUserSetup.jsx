@@ -297,7 +297,7 @@ const QuickUserSetup = () => {
     
         useEffect(() => {
             if(step === 3){
-            const url = `${base_urlqos}/slurm/ldap_list`
+            const url = `${base_urlqos}/slurm/user_and_qos`
             fetch(url, {
                 method: 'GET',
                 headers: {
@@ -407,7 +407,7 @@ const QuickUserSetup = () => {
             {/* Step Content */}
             {step === 1 && (
                 <div className="row">
-                    <div className="col-12 col-md-10 px-0">
+                    <div className="col-12 px-0">
                         {loading && (
                             <div className="loading-overlay">
                                 <div className="spinner-border text-primary" role="status">

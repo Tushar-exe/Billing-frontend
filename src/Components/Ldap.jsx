@@ -195,7 +195,7 @@ const Ldap = () => {
         </div>
       )}
 
-      <div className="container mt-5 mb-5 col-11 ">
+      <div className="container mt-5 mb-5 col-12 ">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}

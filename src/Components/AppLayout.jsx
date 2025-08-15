@@ -48,35 +48,35 @@ function AppLayout() {
     <div className="app-wrapper app-container min-vh-100">
       <Navbar />
 
-      <div className="mt-3 my-auto">
-        <div className="mt-5">
-          {!isLoginPage && <Sidebar />}
+      <div className="mt-5 my-auto">
+        <div>
+          {/* {!isLoginPage && <Sidebar />} */}
 
           <Routes>
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/home" element={<HomeComponent />} />
-            <Route path="/associations" element={<ProtectedRoute><Association /></ProtectedRoute>} />
-            <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
-            <Route path="/users_list" element={<ProtectedRoute><User /></ProtectedRoute>} />
-            <Route path="/user_form" element={<ProtectedRoute><UserForm /></ProtectedRoute>} />
-            <Route path="/qos" element={<ProtectedRoute><Qos /></ProtectedRoute>} />
-            <Route path="/accounts" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+            <Route path="/slurm/associations" element={<ProtectedRoute><Association /></ProtectedRoute>} />
+            <Route path="/slurm/users_list" element={<ProtectedRoute><User /></ProtectedRoute>} />
+            <Route path="/slurm/user_form" element={<ProtectedRoute><UserForm /></ProtectedRoute>} />
+            <Route path="/slurm/qos" element={<ProtectedRoute><Qos /></ProtectedRoute>} />
+            <Route path="/slurm/accounts" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+            <Route path="/slurm/qos/add" element={<ProtectedRoute><AddNewQos /></ProtectedRoute>} />
+            <Route path="/slurm/slurmdbd-log" element={<ProtectedRoute><SlurmdbdLog /></ProtectedRoute>} />
+            <Route path="/slurm/slurmctld-log" element={<ProtectedRoute><SlurmctldLog /></ProtectedRoute>} />
+            <Route path="/slurm/accounts/add" element={<ProtectedRoute><AccountWithQos /></ProtectedRoute>} />
+            <Route path="/slurm/options" element={<ProtectedRoute><Slurmoptions /></ProtectedRoute>} />
             <Route path="/ldap" element={<ProtectedRoute><Ldap /></ProtectedRoute>} />
             <Route path="/ldap/options" element={<ProtectedRoute><Ldapoptions /></ProtectedRoute>} />
-            <Route path="/qos/add" element={<ProtectedRoute><AddNewQos /></ProtectedRoute>} />
-            <Route path="/accounts/add" element={<ProtectedRoute><AccountWithQos /></ProtectedRoute>} />
-            <Route path="/ldap_update" element={<ProtectedRoute><LdapUserUpdater /></ProtectedRoute>} />
-            <Route path="/slurm/options" element={<ProtectedRoute><Slurmoptions /></ProtectedRoute>} />
+            <Route path="/ldap/users" element={<ProtectedRoute><LdapUserUpdater /></ProtectedRoute>} />
             <Route path="/quick-setup" element={<ProtectedRoute><QuickUserSetup /></ProtectedRoute>} />
             <Route path="/ldap/user-ldiff" element={<ProtectedRoute><UserLdiff /></ProtectedRoute>} />
             <Route path="/ldap/group-ldiff" element={<ProtectedRoute><GroupLdiff /></ProtectedRoute>} />
             <Route path="/ldap/logs" element={<ProtectedRoute><LdapLog /></ProtectedRoute>} />
             <Route path="/ldap/uid/logs" element={<ProtectedRoute><UserUIDLog /></ProtectedRoute>} />
             <Route path="/ldap/gid/logs" element={<ProtectedRoute><UserGIDLog /></ProtectedRoute>} />
-            <Route path="/slurm/slurmdbd-log" element={<ProtectedRoute><SlurmdbdLog /></ProtectedRoute>} />
-            <Route path="/slurm/slurmctld-log" element={<ProtectedRoute><SlurmctldLog /></ProtectedRoute>} />
             <Route path="/billing" element={<ProtectedRoute><GenerateBill /></ProtectedRoute>} />
+            <Route path="/billing/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
           </Routes>
         </div>
       </div>

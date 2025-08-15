@@ -6,8 +6,8 @@ const AddNewQos = () => {
     const [formData, setFormData] = useState({
         qos_name: "",
         billing_amount: "",
-        grptresrunmins: "46080",
-        maxsubmitjobperuser: "10",
+        grp_tres_run_mins: "46080",
+        max_submit_job_per_user: "10", // fixed naming
         flags: "nodecay",
     });
 
@@ -23,6 +23,7 @@ const AddNewQos = () => {
     const handleSubmit = async (e) => {
         console.log(formData);
         e.preventDefault();
+        console.log("Sending to backend:", JSON.stringify(formData));
         const response = await fetch(`${base_url}/slurm/qos/add/`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -72,10 +73,10 @@ const AddNewQos = () => {
                                 <label className="form-label">GrpTRESRun Minutes</label>
                                 <input
                                     type="number"
-                                    name="grptresrunmins"
+                                    name="grp_tres_run_mins"
                                     className="form-control"
                                     onChange={handleChange}
-                                    value={formData.grptresrunmins}
+                                    value={formData.grp_tres_run_mins}
                                 />
                             </div>
 
@@ -83,10 +84,10 @@ const AddNewQos = () => {
                                 <label className="form-label">Max Submit Jobs Per User</label>
                                 <input
                                     type="number"
-                                    name="maxsubmitjobperuser"
+                                    name="max_submit_job_per_user"
                                     className="form-control"
                                     onChange={handleChange}
-                                    value={formData.maxsubmitjobperuser}
+                                    value={formData.max_submit_job_per_user}
                                 />
                             </div>
 
