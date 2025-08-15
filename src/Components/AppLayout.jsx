@@ -30,7 +30,6 @@ import UserUIDLog from '../Components/UserUidLog';
 import UserGIDLog from '../Components/UserGidLog';
 import SlurmdbdLog from '../Components/SlurmdbdLog';
 import SlurmctldLog from '../Components/SlurmctldLogs';
-import HomeComponent from '../Components/HomeComponent'
 import GenerateBill from '../Components/GenerateBill';
 import LoginComponent from '../Components/LoginComponent';
 
@@ -39,6 +38,7 @@ import ProtectedRoute from '../ProtectedRoute';
 import LoginForm from '../Components/login/LoginForm'
 import AddQosToUser from './AddQosToUser';
 import RechargeComponent from './RechargeComponent';
+import HomeComponent from './HomeComponent';
 
 
 

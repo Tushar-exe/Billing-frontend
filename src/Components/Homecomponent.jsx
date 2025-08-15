@@ -8,8 +8,9 @@ import banner_img2 from '../Assets/banner_img2.jpg';
 // import test from '../Assets/test.jpg';
 import test2 from '../Assets/test2.jpg';
 import test3 from '../Assets/test3.jpg';
-import ldap_img from '../Assets/ldap.png';
-import slurm_img from '../Assets/slurm.jpg';
+import ldap_img from '../Assets/ldap_users.png';
+
+// import slurm_img from '../Assets/slurm.jpg';
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import '../Custom_css/Custom-card.css';
@@ -103,7 +104,7 @@ const HomeComponent = () => {
 
         </div>
         <div className="card m-2 text-black" style={{ width: '350px', borderRadius: '30px', cursor: 'pointer' }} onClick={() => { navigate('/slurm/options') }}>
-          <img className="card-img mx-auto d-block mt-3" src={slurm_img} alt="" />
+          <img className="card-img mx-auto d-block mt-3" src={test3} alt="" />
           <div className="card-body">
             <h5 className="card-title text-center">SLURM </h5>
             <p className="card-text">Monitor and control high-performance computing jobs and resources.</p>
