@@ -1,5 +1,9 @@
+# Text files
+* text=auto eol=lf
+
+# Images - never modify line endings
 *.jpg binary
 *.jpeg binary
 *.png binary
 *.gif binary
-* text eol=lf
+*.svg binary
