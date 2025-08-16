@@ -101,3 +101,7 @@
 .dropdown-item:hover{
   background-color: #72b8fe;
 }
+
+.user-dropdown{
+  left: -6rem !important;
+}

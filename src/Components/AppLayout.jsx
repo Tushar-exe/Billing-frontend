@@ -79,8 +79,8 @@ function AppLayout() {
             <Route path="/ldap/gid/logs" element={<ProtectedRoute><UserGIDLog /></ProtectedRoute>} />
             <Route path="/billing" element={<ProtectedRoute><GenerateBill /></ProtectedRoute>} />
             <Route path="/billing/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
-            <Route path="/user/addqos" element={<ProtectedRoute><AddQosToUser/></ProtectedRoute>} />
-            <Route path="/user/recharge" element={<ProtectedRoute><RechargeComponent/></ProtectedRoute>}></Route>
+            <Route path="/slurm/user/addqos" element={<ProtectedRoute><AddQosToUser/></ProtectedRoute>} />
+            <Route path="/billing/recharge" element={<ProtectedRoute><RechargeComponent/></ProtectedRoute>}></Route>
           </Routes>
         </div>
       </div>
