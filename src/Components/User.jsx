@@ -166,7 +166,7 @@ const User = () => {
             <button className="btn btn-info me-2" onClick={handleShowUser}>
               {showUser ? 'Show All Users' : 'Show Active Users'}
             </button>
-            <button className="btn btn-info" onClick={() => navigate('/user_form')}>
+            <button className="btn btn-info" onClick={() => navigate('/slurm/user_form')}>
               Add Existing Ldap User to Slurm
             </button>
           </div>

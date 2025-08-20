@@ -352,7 +352,7 @@ const QuickUserSetup = () => {
                 setShowSuccess(false);
                 setStep(4);
                 setMessage('');
-                navigate('/users_list');
+                navigate('/slurm/users_list');
               }, 3000);
                     // setStep(4);
                     // navigate('/users_list');

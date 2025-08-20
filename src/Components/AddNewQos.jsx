@@ -33,7 +33,7 @@ const AddNewQos = () => {
         if (response.ok) {
             console.log(response)
             alert("QoS created successfully!");
-            navigate("/qos");
+            navigate("/slurm/qos");
         } else {
             alert("Error creating QoS.");
         }

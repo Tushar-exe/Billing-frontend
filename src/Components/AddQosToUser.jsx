@@ -121,7 +121,7 @@ const AddQosToUser = () => {
                 toast.success('Qos added successfully to the user');
                 console.log("Server response:", result);
                 setTimeout(() => {
-                    navigate('/users_list');
+                    navigate('/slurm/users_list');
                 }, 2000);
             } else {
                 alert('Error occurred while adding user in SLURM');

@@ -65,7 +65,7 @@ const AccountWithQos = () => {
                 toast.success('Qos added successfully to the Account');
                 console.log("Server response:", result);
                 setTimeout(() => {
-                    navigate('/users_list');
+                    navigate('/slurm/users_list');
                 }, 2000);
                 
             } else {

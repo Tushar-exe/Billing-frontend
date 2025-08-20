@@ -98,7 +98,7 @@ const Account= ()=>{
 
   const handleModifyAccount= ()=>{
     console.log("button clicked");
-    navigate("/accounts/add");
+    navigate("/slurm/accounts/add");
     
   }
 

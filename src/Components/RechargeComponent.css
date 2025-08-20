@@ -1,4 +1,4 @@
-
+/* 
 
 .title {
   font-size: 1.5rem;
@@ -11,11 +11,6 @@
   margin-bottom: 20px;
 }
 
-/* .dropdown {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-} */
 
 .tables-container {
   display: flex;
@@ -100,4 +95,171 @@
   padding: 6px 12px;
   border: none;
   border-radius: 5px;
+} */
+
+.page-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 20px;
+}
+
+.card-header h1, .card-header h2 {
+  margin: 0;
+  color: #111;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+select, input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+table th, table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+table th {
+  background: #f2f2f2;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button-group button.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.button-group button:disabled {
+  background: #f2f2f2;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.form-section {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #1e40af;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+/* animation css  */
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Highlight change animation for balances */
+.highlight-change {
+  animation: pulse 1.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #ffffcc;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
