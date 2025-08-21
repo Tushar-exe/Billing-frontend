@@ -89,7 +89,7 @@ const Qos = () => {
   };
 
   const handleComponent=()=>{
-    navigate('/qos/add');
+    navigate('/slurm/qos/add');
 
   }
 
