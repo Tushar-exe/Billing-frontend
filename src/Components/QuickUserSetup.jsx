@@ -388,6 +388,7 @@ const [users, setUsers] = useState([]);
     // Fetch users & qos from backend
     useEffect(() => {
         const fetchData = async () => {
+            if(step !== 3) return; // Only fetch data if step is 3
             try {
                 console.log("Base URL:", base_urlstep3); // debug
 
@@ -417,7 +418,7 @@ const [users, setUsers] = useState([]);
         };
 
         fetchData();
-    }, [base_urlstep3]);
+    }, [base_urlstep3,step]);
 
     // Handle user/qos dropdown changes
     const handleChangestep3 = (e) => {
